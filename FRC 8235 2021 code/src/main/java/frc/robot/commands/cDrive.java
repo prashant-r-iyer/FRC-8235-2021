@@ -10,10 +10,8 @@ import frc.robot.subsystems.sDrive;
 
 public class cDrive extends CommandBase {
 
-  double straightSpeed;
-  double turnFactor;
-  double straightSpeedLeft;
-  double straightSpeedRight;
+  public static double straightSpeed;
+  public static double turnFactor;
   private final sDrive driveSubsystem;
 
   public cDrive() {
