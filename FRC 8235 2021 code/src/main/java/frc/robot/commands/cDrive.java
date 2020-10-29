@@ -1,6 +1,5 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
@@ -24,8 +23,8 @@ public class cDrive extends CommandBase {
 
   @Override
   public void execute() {
-    straightSpeed = Constants.straightSpeedMultiple * ((GenericHID) RobotContainer.primaryController).getY(Hand.kLeft);
-    turnFactor = Constants.turnFactorMultiple * ((GenericHID) RobotContainer.primaryController).getX(Hand.kRight);
+    straightSpeed = Constants.straightSpeedMultiple * RobotContainer.primaryController.getY(Hand.kLeft);
+    turnFactor = Constants.turnFactorMultiple * RobotContainer.primaryController.getX(Hand.kRight);
 
     driveSubsystem.manualDrive(straightSpeed, turnFactor);
   }
