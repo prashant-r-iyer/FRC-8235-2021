@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
+import frc.robot.subsystems.sDrive;
 
 public class cDrive extends CommandBase {
 
@@ -13,9 +14,11 @@ public class cDrive extends CommandBase {
   double turnFactor;
   double straightSpeedLeft;
   double straightSpeedRight;
+  private final sDrive driveSubsystem;
 
   public cDrive() {
-    addRequirements(Robot.driveSubsystem);
+    driveSubsystem = new sDrive();
+    addRequirements(driveSubsystem);
   }
 
   @Override
