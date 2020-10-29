@@ -28,7 +28,7 @@ public class cDrive extends CommandBase {
     straightSpeed = Constants.straightSpeedMultiple * ((GenericHID) RobotContainer.primaryController).getY(Hand.kLeft);
     turnFactor = Constants.turnFactorMultiple * ((GenericHID) RobotContainer.primaryController).getX(Hand.kRight);
 
-    Robot.driveSubsystem.manualDrive(straightSpeed, turnFactor);
+    driveSubsystem.manualDrive(straightSpeed, turnFactor);
   }
 
   @Override
