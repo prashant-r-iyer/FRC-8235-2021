@@ -29,4 +29,6 @@ public final class Constants {
     public static int rightBackMotorPort = 1;
     public static double slowSpeed = 0.3;
     
+    public static int forwardChannel = 5;
+    public static int reverseChannel = 4;
 }
