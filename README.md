@@ -1,3 +1,3 @@
-# FRC-8235-2021
+# FRC #8235 Beyond the Flames
 
-Programming file for Infinite Recharge
+This is the official repository for FRC #8235's final program
