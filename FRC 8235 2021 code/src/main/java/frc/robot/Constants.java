@@ -17,6 +17,8 @@ package frc.robot;
  */
 public final class Constants {
 
+    
+    public static int primaryControllerPort = 0;
     public static double turnFactorMultiple = 0.8;
     public static double straightSpeedMultiple = -1;
     //public static double turnFactorMultiple = 0;
