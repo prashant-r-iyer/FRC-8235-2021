@@ -73,7 +73,7 @@ public class sDrive extends SubsystemBase {
     rightBackMotor.set(-Constants.slowSpeed);
   }
 
-  public void driveNot() {
+  public void stop() {
     leftFrontMotor.set(0);
     rightFrontMotor.set(0);
     leftBackMotor.set(0);
