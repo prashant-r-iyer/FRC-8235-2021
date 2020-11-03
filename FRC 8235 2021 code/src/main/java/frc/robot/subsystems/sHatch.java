@@ -7,16 +7,40 @@
 
 package frc.robot.subsystems;
 
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.commands.cHatch;
+import frc.robot.Constants;
+
 
 public class sHatch extends SubsystemBase {
-  /**
-   * Creates a new sHatch.
-   */
-  public sHatch() {
+  
+  public static DoubleSolenoid hatchPiston;
 
+  @Override 
+  public void setDefaultCommand(Command defaultCommand){
+    super.setDefaultCommand(new cHatch());
+  }
+  
+  public sHatch() {
+    hatchPiston = new DoubleSolenoid(Constants.forwardChannel, Constants.reverseChannel);
   }
 
+  public void hatchOpen() {
+    hatchPiston.set(DoubleSolenoid.Value.kForward);
+  }
+
+  public void hatchClosed() {
+    hatchPiston.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  @Override
+  public void stop(){
+    hatchPiston.set(DoubleSolenoid.Value.kOff);
+  }
+  
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

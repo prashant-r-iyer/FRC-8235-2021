@@ -8,12 +8,18 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
+import frc.robot.subsystems.sHatch;
 
 public class cHatch extends CommandBase {
   /**
    * Creates a new cHatch.
    */
+  private final sHatch hatchSubsystem;
+  
   public cHatch() {
+    hatchSubsystem = new sHatch();
+    addRequirements(hatchSubsystem);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -25,8 +31,14 @@ public class cHatch extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    while (RobotContainer.primaryController.getYButtonPressed()) {
+      hatchSubsystem.hatchOpen();
+    }
+    while (RobotContainer.primaryController.getAButtonPressed()) {
+      hatchSubsystem.hatchClosed();
+    }
+    hatchSubsystem.stop();
   }
-
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
