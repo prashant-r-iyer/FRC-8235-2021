@@ -36,7 +36,6 @@ public class sHatch extends SubsystemBase {
     hatchPiston.set(DoubleSolenoid.Value.kReverse);
   }
 
-  @Override
   public void stop(){
     hatchPiston.set(DoubleSolenoid.Value.kOff);
   }
