@@ -12,15 +12,12 @@ import frc.robot.RobotContainer;
 import frc.robot.subsystems.sHatch;
 
 public class cHatch extends CommandBase {
-  /**
-   * Creates a new cHatch.
-   */
+  
   private final sHatch hatchSubsystem;
   
   public cHatch() {
     hatchSubsystem = new sHatch();
     addRequirements(hatchSubsystem);
-    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
@@ -42,6 +39,9 @@ public class cHatch extends CommandBase {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    if (interrupted) {
+      hatchSubsystem.stop();
+    }
   }
 
   // Returns true when the command should end.

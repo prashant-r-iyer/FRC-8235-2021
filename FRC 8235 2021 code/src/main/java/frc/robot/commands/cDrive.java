@@ -34,7 +34,6 @@ public class cDrive extends CommandBase {
     if (interrupted) {
       straightSpeed = 0;
     }
-    
   }
 
   @Override
