@@ -19,8 +19,8 @@ public final class Constants {
 
     public static int primaryControllerPort = 0;
 
-    public static double turnFactorMultiple = 0.8;
-    public static double straightSpeedMultiple = -1;
+    public static double turnFactorMultiple = 0;
+    public static double straightSpeedMultiple = 0;
     //public static double turnFactorMultiple = 0;
     //public static double straightSpeedMultiple = 0;
 
@@ -31,7 +31,7 @@ public final class Constants {
     public static double slowSpeed = 0.3;
     public static double testSpeed = 0.5;
     
-    public static int forwardChannel = 5;
-    public static int reverseChannel = 4;
+    public static int forwardChannel = 0;
+    public static int reverseChannel = 1;
 
 }

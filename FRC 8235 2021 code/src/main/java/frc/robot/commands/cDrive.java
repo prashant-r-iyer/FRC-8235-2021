@@ -23,7 +23,7 @@ public class cDrive extends CommandBase {
 
   @Override
   public void execute() {
-    straightSpeed = Constants.straightSpeedMultiple * RobotContainer.primaryController.getY(Hand.kLeft);
+    straightSpeed = -Constants.straightSpeedMultiple * RobotContainer.primaryController.getY(Hand.kLeft);
     turnFactor = Constants.turnFactorMultiple * RobotContainer.primaryController.getX(Hand.kRight);
 
     driveSubsystem.manualDrive(straightSpeed, turnFactor);
