@@ -27,7 +27,7 @@ public class sHatch extends SubsystemBase {
   
   public sHatch() {
     hatchPiston = new DoubleSolenoid(Constants.forwardChannel, Constants.reverseChannel);
-    airCompressor = new Compressor(0);
+    airCompressor = new Compressor(Constants.airCompressorPort);
     airCompressor.start();
   }
 

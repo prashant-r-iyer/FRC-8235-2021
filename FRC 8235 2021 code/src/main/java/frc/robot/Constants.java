@@ -33,5 +33,6 @@ public final class Constants {
     
     public static int forwardChannel = 0;
     public static int reverseChannel = 1;
+    public static int airCompressorPort = 0;
 
 }
