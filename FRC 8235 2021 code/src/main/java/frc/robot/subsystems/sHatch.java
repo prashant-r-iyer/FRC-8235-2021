@@ -19,6 +19,9 @@ public class sHatch extends SubsystemBase {
   
   public static DoubleSolenoid hatchPiston;
   public static Compressor airCompressor;
+  public static boolean enabled;
+  public static boolean pressureSwitch;
+  public static double current;
 
   // @Override 
   // public void setDefaultCommand(Command defaultCommand){
@@ -47,9 +50,9 @@ public class sHatch extends SubsystemBase {
     airCompressor.setClosedLoopControl(true);
     airCompressor.setClosedLoopControl(false);
 
-    boolean enabled = airCompressor.enabled();
-    boolean pressureSwitch = airCompressor.getPressureSwitchValue();
-    double current = airCompressor.getCompressorCurrent();
+    enabled = airCompressor.enabled();
+    pressureSwitch = airCompressor.getPressureSwitchValue();
+    current = airCompressor.getCompressorCurrent();
   }
 
   @Override
