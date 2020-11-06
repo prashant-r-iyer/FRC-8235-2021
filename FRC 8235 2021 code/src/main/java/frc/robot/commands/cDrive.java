@@ -10,7 +10,7 @@ public class cDrive extends CommandBase {
 
   public static double straightSpeed;
   public static double turnFactor;
-  private final sDrive driveSubsystem;
+  public static sDrive driveSubsystem;
 
   public cDrive() {
     driveSubsystem = new sDrive();

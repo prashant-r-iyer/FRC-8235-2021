@@ -13,17 +13,17 @@ import frc.robot.subsystems.sHatch;
 
 public class cHatch extends CommandBase {
   
-  private final sHatch hatchSubsystem;
+  public static sHatch hatchSubsystem;
   
   public cHatch() {
     hatchSubsystem = new sHatch();
     addRequirements(hatchSubsystem);
   }
 
-  // Called when the command is initially scheduled.
-  @Override
-  public void initialize() {
-  }
+  // // Called when the command is initially scheduled.
+  // @Override
+  // public void initialize() {
+  // }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
@@ -34,19 +34,19 @@ public class cHatch extends CommandBase {
     while (RobotContainer.primaryController.getAButtonPressed()) {
       hatchSubsystem.hatchClosed();
     }
-    hatchSubsystem.stop();
+    // hatchSubsystem.stop();
   }
   // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
-    if (interrupted) {
-      hatchSubsystem.stop();
-    }
-  }
+  // @Override
+  // public void end(boolean interrupted) {
+  //   if (interrupted) {
+  //     // hatchSubsystem.stop();
+  //   }
+  // }
 
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
-  }
+  // // Returns true when the command should end.
+  // @Override
+  // public boolean isFinished() {
+  //   return false;
+  // }
 }
