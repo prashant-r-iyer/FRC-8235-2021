@@ -25,9 +25,9 @@ public final class Constants {
     //public static double straightSpeedMultiple = 0;
 
     public static int leftFrontMotorPort = 4;
-    public static int rightFrontMotorPort = 5;
-    public static int leftBackMotorPort = 0;
-    public static int rightBackMotorPort = 1;
+    public static int rightFrontMotorPort = 1;
+    public static int leftBackMotorPort = 2;
+    public static int rightBackMotorPort = 3;
     public static double slowSpeed = 0.3;
     public static double testSpeed = 0.5;
     
