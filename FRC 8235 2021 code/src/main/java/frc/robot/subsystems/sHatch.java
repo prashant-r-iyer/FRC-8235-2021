@@ -43,6 +43,15 @@ public class sHatch extends SubsystemBase {
     hatchPiston.set(DoubleSolenoid.Value.kOff);
   }
   
+  public void compressorControl(){
+    airCompressor.setClosedLoopControl(true);
+    airCompressor.setClosedLoopControl(false);
+
+    boolean enabled = airCompressor.enabled();
+    boolean pressureSwitch = airCompressor.getPressureSwitchValue();
+    double current = airCompressor.getCompressorCurrent();
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
