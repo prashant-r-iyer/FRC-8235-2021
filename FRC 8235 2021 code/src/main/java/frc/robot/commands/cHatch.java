@@ -34,6 +34,7 @@ public class cHatch extends CommandBase {
     while (RobotContainer.primaryController.getAButtonPressed()) {
       hatchSubsystem.hatchClosed();
     }
+    
     // hatchSubsystem.stop();
   }
   // Called once the command ends or is interrupted.
