@@ -7,7 +7,7 @@
 
 package frc.robot.subsystems;
 
-
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 // import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -18,6 +18,7 @@ import frc.robot.Constants;
 public class sHatch extends SubsystemBase {
   
   public static DoubleSolenoid hatchPiston;
+  public static Compressor airCompressor;
 
   // @Override 
   // public void setDefaultCommand(Command defaultCommand){
@@ -26,6 +27,8 @@ public class sHatch extends SubsystemBase {
   
   public sHatch() {
     hatchPiston = new DoubleSolenoid(Constants.forwardChannel, Constants.reverseChannel);
+    airCompressor = new Compressor(0);
+    airCompressor.start();
   }
 
   public void hatchOpen() {
