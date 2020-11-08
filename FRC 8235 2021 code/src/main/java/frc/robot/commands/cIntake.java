@@ -7,7 +7,9 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.sIntake;
 
 public class cIntake extends CommandBase {
@@ -30,7 +32,15 @@ public class cIntake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    while (RobotContainer.primaryController.g)
+    if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)) {
+      intakeSubsystem.reverseIntake();
+    }
+    if (RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
+      intakeSubsystem.forwardIntake();
+    }
+    if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft) && RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
+      intakeSubsystem.stop();
+    }
   }
 
   // Called once the command ends or is interrupted.
