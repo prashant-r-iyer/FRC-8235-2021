@@ -20,7 +20,7 @@ public class sIntake extends SubsystemBase {
   public static DoubleSolenoid intakePiston;
   
   public sIntake() {
-    intakePiston = new DoubleSolenoid(Constants.intakeForwardChannel, Constants.intakeReverseChannel)
+    intakePiston = new DoubleSolenoid(Constants.intakeForwardChannel, Constants.intakeReverseChannel);
     intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
   }
 
@@ -44,7 +44,7 @@ public class sIntake extends SubsystemBase {
     intakePiston.set(DoubleSolenoid.Value.kReverse);
   }
 
-  public void pistonStop(){
+  public void pistonStop() {
     intakePiston.set(DoubleSolenoid.Value.kOff);
   }
 
