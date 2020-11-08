@@ -9,14 +9,17 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class sIntake extends SubsystemBase {
 
   public static WPI_VictorSPX intakeMotor;
+  public static DoubleSolenoid intakePiston;
   
   public sIntake() {
+    intakePiston = new DoubleSolenoid(Constants.intakeForwardChannel, Constants.intakeReverseChannel)
     intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
   }
 
@@ -28,8 +31,20 @@ public class sIntake extends SubsystemBase {
     intakeMotor.set(Constants.reverseIntakeSpeed);
   }
 
-  public void stop() {
+  public void motorStop() {
     intakeMotor.set(0);
+  }
+
+  public void hatchOpen() {
+    intakePiston.set(DoubleSolenoid.Value.kForward);
+  }
+
+  public void hatchClosed() {
+    intakePiston.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  public void pistonStop(){
+    intakePiston.set(DoubleSolenoid.Value.kOff);
   }
 
   @Override

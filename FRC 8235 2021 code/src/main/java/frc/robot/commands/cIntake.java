@@ -13,9 +13,7 @@ import frc.robot.RobotContainer;
 import frc.robot.subsystems.sIntake;
 
 public class cIntake extends CommandBase {
-  /**
-   * Creates a new cIntake.
-   */
+  
   public static sIntake intakeSubsystem;
   
   public cIntake() {
@@ -39,7 +37,13 @@ public class cIntake extends CommandBase {
       intakeSubsystem.forwardIntake();
     }
     if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft) && RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
-      intakeSubsystem.stop();
+      intakeSubsystem.motorStop();
+    }
+    while (RobotContainer.primaryController.getYButtonPressed()) {
+      intakeSubsystem.hatchOpen();
+    }
+    while (RobotContainer.primaryController.getAButtonPressed()) {
+      intakeSubsystem.hatchClosed();
     }
   }
 
