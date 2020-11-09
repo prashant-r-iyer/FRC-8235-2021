@@ -7,53 +7,33 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-// import edu.wpi.first.wpilibj2.command.Command;
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-// import frc.robot.commands.cHatch;
+
 import frc.robot.Constants;
 
 
 public class sHatch extends SubsystemBase {
   
-  public static DoubleSolenoid hatchPiston;
-  public static Compressor airCompressor;
-  public static boolean enabled;
-  public static boolean pressureSwitch;
-  public static double current;
-
+  
   // @Override 
   // public void setDefaultCommand(Command defaultCommand){
   //   super.setDefaultCommand(new cHatch());
   // }
   
   public sHatch() {
-    hatchPiston = new DoubleSolenoid(Constants.forwardChannel, Constants.reverseChannel);
-    airCompressor = new Compressor(Constants.airCompressorPort);
-    airCompressor.start();
-  }
+    hatchPiston = new DoubleSolenoid(0,Constants.forwardChannel, Constants.reverseChannel);
+    
 
   public void hatchOpen() {
-    hatchPiston.set(DoubleSolenoid.Value.kForward);
+    hatchPiston.set(kForward);
   }
 
   public void hatchClosed() {
-    hatchPiston.set(DoubleSolenoid.Value.kReverse);
+    hatchPiston.set(kReverse);
   }
 
-  public void stop(){
-    hatchPiston.set(DoubleSolenoid.Value.kOff);
-  }
-  
-  public void compressorControl(){
-    airCompressor.setClosedLoopControl(true);
-    airCompressor.setClosedLoopControl(false);
-
-    enabled = airCompressor.enabled();
-    pressureSwitch = airCompressor.getPressureSwitchValue();
-    current = airCompressor.getCompressorCurrent();
-  }
 
   @Override
   public void periodic() {
