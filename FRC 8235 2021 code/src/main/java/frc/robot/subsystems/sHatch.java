@@ -15,6 +15,8 @@ import frc.robot.Constants;
 
 
 public class sHatch extends SubsystemBase {
+
+  public static DoubleSolenoid hatchPiston;
   
   
   // @Override 
@@ -24,6 +26,7 @@ public class sHatch extends SubsystemBase {
   
   public sHatch() {
     hatchPiston = new DoubleSolenoid(0,Constants.forwardChannel, Constants.reverseChannel);
+  }
     
 
   public void hatchOpen() {
