@@ -19,7 +19,7 @@ public class sIntake extends SubsystemBase {
   public static DoubleSolenoid intakePiston;
   
   public sIntake() {
-    intakePiston = new DoubleSolenoid(Constants.intakeForwardChannel, Constants.intakeReverseChannel);
+    intakePiston = new DoubleSolenoid(0,Constants.intakeForwardChannel, Constants.intakeReverseChannel);
     intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
   }
 

@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import java.io.ObjectInputFilter.Status;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants.  This class should not be used for any other purpose.  All constants should be
@@ -34,7 +36,7 @@ public final class Constants {
     
     public static int forwardChannel = 0;
     public static int reverseChannel = 1;
-    public static int airCompressorPort = 0;
+    public static int hatchport = 0;
 
     public static int intakeMotorPort = 0;
     public static double forwardIntakeSpeed = 1;

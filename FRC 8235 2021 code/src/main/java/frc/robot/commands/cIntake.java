@@ -39,10 +39,10 @@ public class cIntake extends CommandBase {
     if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft) && RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
       intakeSubsystem.motorStop();
     }
-    while (RobotContainer.primaryController.getYButtonPressed()) {
+    while (RobotContainer.primaryController.getBButtonPressed()) {
       intakeSubsystem.hatchOpen();
     }
-    while (RobotContainer.primaryController.getAButtonPressed()) {
+    while (RobotContainer.primaryController.getXButtonPressed()) {
       intakeSubsystem.hatchClosed();
     }
   }
