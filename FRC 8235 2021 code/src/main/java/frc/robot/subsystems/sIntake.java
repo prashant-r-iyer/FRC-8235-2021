@@ -31,10 +31,6 @@ public class sIntake extends SubsystemBase {
     intakeMotor.set(Constants.reverseIntakeSpeed);
   }
 
-  public void motorStop() {
-    intakeMotor.set(0);
-  }
-
   public void hatchOpen() {
     intakePiston.set(DoubleSolenoid.Value.kForward);
   }

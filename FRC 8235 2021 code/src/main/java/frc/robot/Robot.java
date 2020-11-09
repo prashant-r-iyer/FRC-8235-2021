@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.cDrive;
 import frc.robot.commands.cHatch;
+import frc.robot.commands.cIntake;
 
 
 /**
@@ -25,6 +26,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   public static cDrive driveCommand = new cDrive();
   public static cHatch hatchCommand = new cHatch();
+  public static cIntake intakeCommand = new cIntake();
 
 
   /**

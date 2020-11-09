@@ -25,6 +25,7 @@ public class cIntake extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+    intakeSubsystem.hatchOpen();
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -36,20 +37,12 @@ public class cIntake extends CommandBase {
     if (RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
       intakeSubsystem.forwardIntake();
     }
-    if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft) && RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
-      intakeSubsystem.motorStop();
-    }
-    while (RobotContainer.primaryController.getBButtonPressed()) {
-      intakeSubsystem.hatchOpen();
-    }
-    while (RobotContainer.primaryController.getXButtonPressed()) {
-      intakeSubsystem.hatchClosed();
-    }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    intakeSubsystem.hatchClosed();
   }
 
   // Returns true when the command should end.
