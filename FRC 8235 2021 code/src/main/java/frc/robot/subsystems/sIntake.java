@@ -8,7 +8,6 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -43,11 +42,7 @@ public class sIntake extends SubsystemBase {
   public void hatchClosed() {
     intakePiston.set(DoubleSolenoid.Value.kReverse);
   }
-
-  public void pistonStop() {
-    intakePiston.set(DoubleSolenoid.Value.kOff);
-  }
-
+  
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

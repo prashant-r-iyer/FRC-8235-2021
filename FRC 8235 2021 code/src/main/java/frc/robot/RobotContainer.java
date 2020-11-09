@@ -19,6 +19,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   
   public static XboxController primaryController = new XboxController(Constants.primaryControllerPort);
+  public static XboxController secondaryController =new XboxController(Constants.secondaryControllerPort);
   
 /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
