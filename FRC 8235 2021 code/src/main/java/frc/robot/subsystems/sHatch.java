@@ -25,7 +25,7 @@ public class sHatch extends SubsystemBase {
   // }
   
   public sHatch() {
-    hatchPiston = new DoubleSolenoid(Constants.hatchport,Constants.forwardChannel, Constants.reverseChannel);
+    hatchPiston = new DoubleSolenoid(Constants.hatchport,Constants.hatchForwardChannel, Constants.hatchReverseChannel);
   }
     
 
