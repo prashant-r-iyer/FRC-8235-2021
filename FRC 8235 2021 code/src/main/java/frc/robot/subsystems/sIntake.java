@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -32,11 +33,11 @@ public class sIntake extends SubsystemBase {
   }
 
   public void hatchOpen() {
-    intakePiston.set(DoubleSolenoid.Value.kForward);
+    intakePiston.set(kForward);
   }
 
   public void hatchClosed() {
-    intakePiston.set(DoubleSolenoid.Value.kReverse);
+    intakePiston.set(kReverse);
   }
   
   @Override
