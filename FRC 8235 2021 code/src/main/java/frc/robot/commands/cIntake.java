@@ -25,24 +25,25 @@ public class cIntake extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intakeSubsystem.hatchOpen();
+    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    intakeSubsystem.hatchClosed();
     if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)) {
-      intakeSubsystem.reverseIntake();
+      //intakeSubsystem.reverseIntake();
     }
     if (RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
-      intakeSubsystem.forwardIntake();
+      //intakeSubsystem.forwardIntake();
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    intakeSubsystem.hatchClosed();
+    //intakeSubsystem.hatchClosed();
   }
 
   // Returns true when the command should end.
