@@ -31,12 +31,13 @@ public class cIntake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intakeSubsystem.hatchClosed();
     if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)) {
       //intakeSubsystem.reverseIntake();
+      intakeSubsystem.hatchOpen();
     }
     if (RobotContainer.primaryController.getBumperPressed(Hand.kRight)) {
       //intakeSubsystem.forwardIntake();
+      intakeSubsystem.hatchClosed();
     }
   }
 
