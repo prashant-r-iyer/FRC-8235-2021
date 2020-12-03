@@ -20,8 +20,8 @@ public final class Constants {
     public static int primaryControllerPort = 0;
     public static int secondaryControllerPort = 1;
 
-    public static double turnFactorMultiple = 0;
-    public static double straightSpeedMultiple = 0;
+    public static double turnFactorMultiple = 0.7;
+    public static double straightSpeedMultiple = 0.8;
     //public static double turnFactorMultiple = 0;
     //public static double straightSpeedMultiple = 0;
 
@@ -32,14 +32,14 @@ public final class Constants {
     public static double slowSpeed = 0.3;
     public static double testSpeed = 0.5;
     
-    public static int hatchForwardChannel = 0;
-    public static int hatchReverseChannel = 1;
+    public static int hatchForwardChannel = 4;
+    public static int hatchReverseChannel = 5;
     public static int hatchport = 0;
 
     public static int intakeMotorPort = 0;
     public static double forwardIntakeSpeed = 1;
     public static double reverseIntakeSpeed = -1;
-    public static int intakeForwardChannel = 2;
-    public static int intakeReverseChannel = 3;
+    public static int intakeForwardChannel = 6;
+    public static int intakeReverseChannel = 7;
 
 }

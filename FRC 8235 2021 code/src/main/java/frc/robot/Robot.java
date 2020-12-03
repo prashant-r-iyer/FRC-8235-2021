@@ -105,6 +105,7 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     driveCommand.execute();
     hatchCommand.execute();
+    intakeCommand.execute();
   }
 
   @Override
