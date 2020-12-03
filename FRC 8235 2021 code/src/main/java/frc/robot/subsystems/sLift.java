@@ -14,30 +14,24 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
-public class sTeleLift extends SubsystemBase {
+public class sLift extends SubsystemBase {
 
-  public static WPI_VictorSPX teleLiftMotor1;
-  public static WPI_VictorSPX teleLiftMotor2;
+  public static WPI_VictorSPX liftMotor1;
+  public static WPI_VictorSPX liftMotor2;
 
-  public sTeleLift() {
-    teleLiftMotor1 = new WPI_VictorSPX(Constants.teleLiftMotorPort1);
-    teleLiftMotor2 = new WPI_VictorSPX(Constants.teleLiftMotorPort2);
+  public sLift() {
+    liftMotor1 = new WPI_VictorSPX(Constants.liftMotorPort1);
+    liftMotor2 = new WPI_VictorSPX(Constants.liftMotorPort2);
   }
 
-  public void upMotor1() {
-    teleLiftMotor1.set(Constants.teleLiftUpSpeed);
+  public void liftUp() {
+    liftMotor1.set(Constants.liftUpSpeed);
+    liftMotor2.set(Constants.liftUpSpeed);
   }
 
-  public void downMotor1() {
-    teleLiftMotor1.set(Constants.teleLiftDownSpeed);
-  }
-
-  public void upMotor2() {
-    teleLiftMotor2.set(Constants.teleLiftUpSpeed);
-  }
-
-  public void downMotor2() {
-    teleLiftMotor1.set(Constants.teleLiftDownSpeed);
+  public void liftDown() {
+    liftMotor1.set(Constants.liftDownSpeed);
+    liftMotor2.set(Constants.liftDownSpeed);
   }
 
   @Override

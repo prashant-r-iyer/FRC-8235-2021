@@ -42,9 +42,8 @@ public final class Constants {
     public static int intakeForwardChannel = 2;
     public static int intakeReverseChannel = 3;
 
-    public static int teleLiftMotorPort1 = 0;
-    public static int teleLiftMotorPort2 = 0;
-    public static int teleLiftUpSpeed = 1;
-    public static int teleLiftDownSpeed = -1; 
-
+    public static int liftMotorPort1 = 0;
+    public static int liftMotorPort2 = 0;
+    public static int liftUpSpeed = 1;
+    public static int liftDownSpeed = -1; 
 }
