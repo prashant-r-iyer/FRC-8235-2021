@@ -18,6 +18,7 @@ public class cLift extends CommandBase {
   public static sLift liftSubsystem;
   
   public cLift() {
+    
     liftSubsystem = new sLift();
     addRequirements(liftSubsystem);
   }
