@@ -7,41 +7,39 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.sIntake;
+import frc.robot.subsystems.sLift;
 
-public class cIntake extends CommandBase {
+public class cLift extends CommandBase {
   
-  public static sIntake intakeSubsystem;
-  
-  public cIntake() {
-    intakeSubsystem = new sIntake();
-    addRequirements(intakeSubsystem);
+  public static sLift liftSubsystem;
+  public cLift() {
+    liftSubsystem = new sLift();
+    addRequirements(liftSubsystem);
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if (RobotContainer.primaryController.getXButtonPressed()) {
-      intakeSubsystem.hatchOpen();
+    while (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
+    liftSubsystem.liftDown();
     }
-    if (RobotContainer.primaryController.getYButtonPressed()) {
-      intakeSubsystem.hatchClosed();
+    while (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
+      liftSubsystem.liftUp();
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    //intakeSubsystem.hatchClosed();
   }
 
   // Returns true when the command should end.

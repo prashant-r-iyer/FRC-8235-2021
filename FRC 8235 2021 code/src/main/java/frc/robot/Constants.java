@@ -34,11 +34,10 @@ public final class Constants {
     
     public static int hatchForwardChannel = 4;
     public static int hatchReverseChannel = 5;
-    public static int hatchport = 0;
 
     public static int intakeMotorPort = 0;
-    public static double forwardIntakeSpeed = 1;
-    public static double reverseIntakeSpeed = -1;
+    public static double intakeForwardSpeed = 1;
+    public static double intakeBackwardSpeed = -1;
     public static int intakeForwardChannel = 6;
     public static int intakeReverseChannel = 7;
 
