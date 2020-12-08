@@ -33,7 +33,7 @@ public class cIntake extends CommandBase {
     if (RobotContainer.primaryController.getXButtonPressed()) {
       intakeSubsystem.hatchOpen();
     }
-    if (RobotContainer.primaryController.getYButtonPressed()) {
+    if (RobotContainer.primaryController.getBButtonPressed()) {
       intakeSubsystem.hatchClosed();
     }
   }

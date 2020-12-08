@@ -36,7 +36,7 @@ public class cLift extends CommandBase {
     while (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
     liftSubsystem.liftDown();
     }
-    while (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
+    while (RobotContainer.primaryController.getBumperPressed(Hand.kRight)){
       liftSubsystem.liftUp();
     }
 

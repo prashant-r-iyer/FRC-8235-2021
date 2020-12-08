@@ -41,8 +41,7 @@ public final class Constants {
     public static int intakeForwardChannel = 6;
     public static int intakeReverseChannel = 7;
 
-    public static int liftMotorPort1 = 7;
-    public static int liftMotorPort2 = 8;
+    public static int liftMotorPort1 = 2;
+    public static int liftMotorPort2 = 3;
     public static int liftUpSpeed = 1;
-    public static int liftDownSpeed = -1; 
 }
