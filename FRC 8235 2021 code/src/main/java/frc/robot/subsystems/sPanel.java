@@ -20,7 +20,7 @@ import frc.robot.Constants;
 
 public class sPanel extends SubsystemBase {
 
-  //Creating the colors to be matched.
+  // Creating the colors to be matched.
   private final Color blueTarget = ColorMatch.makeColor(0.143, 0.427, 0.429);
   private final Color greenTarget = ColorMatch.makeColor(0.197, 0.361, 0.240);
   private final Color redTarget = ColorMatch.makeColor(0.321, 0.333, 0.154);
