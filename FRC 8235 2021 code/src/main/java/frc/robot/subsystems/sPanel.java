@@ -79,8 +79,9 @@ public class sPanel extends SubsystemBase {
       return "R";
     } else if (match.color == yellowTarget){
       return "Y";
+    } else {
+      return null;
     }
-    return null;
   }
 
   // Detects current color and compares it to the color required.
@@ -96,8 +97,7 @@ public class sPanel extends SubsystemBase {
       return c.equals("R");
     } else if (match.color == yellowTarget){
       return c.equals("Y");
-    }
-    return null;
+    } else return false;
   }
 
   @Override
