@@ -71,13 +71,13 @@ public class sPanel extends SubsystemBase {
   public String checkColor(){
     Color detectedColor = colorSensor.getColor();
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
-    if (match.color == blueTarget){
+    if (match.color == blueTarget) {
       return "B";
-    } else if (match.color == greenTarget){
+    } else if (match.color == greenTarget) {
       return "G";
-    } else if (match.color == redTarget){
+    } else if (match.color == redTarget) {
       return "R";
-    } else if (match.color == yellowTarget){
+    } else if (match.color == yellowTarget) {
       return "Y";
     } else {
       return null;
