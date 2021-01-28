@@ -44,4 +44,11 @@ public final class Constants {
     public static int liftMotorPort1 = 2;
     public static int liftMotorPort2 = 3;
     public static int liftUpSpeed = 1;
+
+    public static int controlPanel = 0;
+    public static double zeroSpeed = 0.0;
+    public static double quarterSpeed = 0.25;
+    public static double halfSpeed = 0.5;
+    public static double threeQuarterSpeed = 0.75;
+    public static double fullSpeed = 1.0;
 }
