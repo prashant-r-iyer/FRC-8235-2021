@@ -20,7 +20,7 @@ import frc.robot.Constants;
 
 public class sPanel extends SubsystemBase {
 
-  //Creating the colours to be matched.
+  //Creating the colors to be matched.
   private final Color blueTarget = ColorMatch.makeColor(0.143, 0.427, 0.429);
   private final Color greenTarget = ColorMatch.makeColor(0.197, 0.361, 0.240);
   private final Color redTarget = ColorMatch.makeColor(0.321, 0.333, 0.154);
@@ -31,25 +31,43 @@ public class sPanel extends SubsystemBase {
   public static WPI_VictorSPX panelMotor; 
 
   public sPanel() {
-    //Setting up the colour sensor.
+    // Setting up the color sensor.
     I2C.Port i2cPort = I2C.Port.kOnboard;
     ColorSensorV3 colorSensor = new ColorSensorV3(i2cPort);
     ColorMatch colorMatcher = new ColorMatch();
 
-    //Setting up the motor.
+    // Setting up the motor.
     panelMotor = new WPI_VictorSPX(Constants.controlPanel);
 
-    //Adding the colors to be matched to the colorMatcher object.
+    // Adding the colors to be matched to the colorMatcher object.
     colorMatcher.addColorMatch(blueTarget);
     colorMatcher.addColorMatch(greenTarget);
     colorMatcher.addColorMatch(redTarget);
     colorMatcher.addColorMatch(yellowTarget);
   }
 
-  public void setSpeed(double speedLevel){
-    panelMotor.set(ControlMode.PercentOutput, speedLevel);
+  // Defining a few methods that control the motor speed.
+  public void zeroSpeed(){
+    panelMotor.set(ControlMode.PercentOutput, Constants.zeroSpeed);
   }
 
+  public void quarterSpeed(){
+    panelMotor.set(ControlMode.PercentOutput, Constants.quarterSpeed);
+  }
+
+  public void halfSpeed(){
+    panelMotor.set(ControlMode.PercentOutput, Constants.halfSpeed);
+  }
+
+  public void threeQuarterSpeed(){
+    panelMotor.set(ControlMode.PercentOutput, Constants.threeQuarterSpeed);
+  }
+
+  public void fullSpeed(){
+    panelMotor.set(ControlMode.PercentOutput, Constants.fullSpeed);
+  }
+
+  // Checks for the color to be matched.
   public String checkColor(){
     Color detectedColor = colorSensor.getColor();
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
@@ -65,6 +83,7 @@ public class sPanel extends SubsystemBase {
     return null;
   }
 
+  // Detects current color and compares it to the color required.
   public Boolean detectColor(String c){
     Color detectedColor = colorSensor.getColor();
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
