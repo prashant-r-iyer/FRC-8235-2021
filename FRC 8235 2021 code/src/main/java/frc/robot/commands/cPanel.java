@@ -10,7 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.sPanel;
-import frc.robot.Constants;
+
 
 public class cPanel extends CommandBase {
   
@@ -32,7 +32,7 @@ public class cPanel extends CommandBase {
     // Main code. First checks the colour to be found. Then, the motor switches on and only turns off when said color is detected.
     if (RobotContainer.primaryController.getAButtonPressed()){
       String c = panelSubsystem.checkColor();
-      panelSubsystem.halfSpeed();;
+      panelSubsystem.halfSpeed();
       if (panelSubsystem.detectColor(c)){
         panelSubsystem.zeroSpeed();
       }
