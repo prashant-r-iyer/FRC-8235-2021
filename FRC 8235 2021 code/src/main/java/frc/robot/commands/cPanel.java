@@ -29,13 +29,12 @@ public class cPanel extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    panelSubsystem.setSpeed(Constants.zeroSpeed);
-
-    String c = panelSubsystem.checkColor();
-
+    // Main code. First checks the colour to be found. Then, the motor switches on and only turns off when said color is detected.
     if (RobotContainer.primaryController.getAButtonPressed()){
-      while (!panelSubsystem.detectColor(c)){
-        panelSubsystem.setSpeed(Constants.halfSpeed);
+      String c = panelSubsystem.checkColor();
+      panelSubsystem.halfSpeed();;
+      if (panelSubsystem.detectColor(c)){
+        panelSubsystem.zeroSpeed();
       }
     }
   }
