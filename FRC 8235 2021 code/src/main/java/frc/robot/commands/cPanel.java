@@ -8,13 +8,17 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
+import frc.robot.subsystems.sPanel;
+import frc.robot.Constants;
 
 public class cPanel extends CommandBase {
-  /**
-   * Creates a new ControlPanel.
-   */
+  
+  public static sPanel panelSubsystem;
+
   public cPanel() {
-    // Use addRequirements() here to declare subsystem dependencies.
+    panelSubsystem = new sPanel();
+    addRequirements(panelSubsystem);
   }
 
   // Called when the command is initially scheduled.
@@ -25,6 +29,15 @@ public class cPanel extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    panelSubsystem.setSpeed(Constants.zeroSpeed);
+
+    String c = panelSubsystem.checkColor();
+
+    if (RobotContainer.primaryController.getAButtonPressed()){
+      while (!panelSubsystem.detectColor(c)){
+        panelSubsystem.setSpeed(Constants.halfSpeed);
+      }
+    }
   }
 
   // Called once the command ends or is interrupted.
