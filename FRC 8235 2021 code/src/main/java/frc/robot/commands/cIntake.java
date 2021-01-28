@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.sIntake;
 
+
 public class cIntake extends CommandBase {
   
   public static sIntake intakeSubsystem;
