@@ -75,9 +75,9 @@ public class sPanel extends SubsystemBase {
       return "B";
     } else if (match.color == greenTarget){
       return "G";
-    }else if (match.color == redTarget){
+    } else if (match.color == redTarget){
       return "R";
-    }else if (match.color == yellowTarget){
+    } else if (match.color == yellowTarget){
       return "Y";
     }
     return null;
@@ -92,9 +92,9 @@ public class sPanel extends SubsystemBase {
       return c.equals("B");
     } else if (match.color == greenTarget){
       return c.equals("G");
-    }else if (match.color == redTarget){
+    } else if (match.color == redTarget){
       return c.equals("R");
-    }else if (match.color == yellowTarget){
+    } else if (match.color == yellowTarget){
       return c.equals("Y");
     }
     return null;
