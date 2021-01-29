@@ -14,6 +14,7 @@ import frc.robot.commands.cDrive;
 import frc.robot.commands.cHatch;
 import frc.robot.commands.cIntake;
 import frc.robot.commands.cLift;
+import frc.robot.commands.cPanel;
 
 
 /**
@@ -29,6 +30,7 @@ public class Robot extends TimedRobot {
   public static cHatch hatchCommand = new cHatch();
   public static cIntake intakeCommand = new cIntake();
   public static cLift liftCommand = new cLift();
+  public static cPanel panelCommand = new cPanel();
 
 
   /**
@@ -109,6 +111,7 @@ public class Robot extends TimedRobot {
     hatchCommand.execute();
     intakeCommand.execute();
     liftCommand.execute();
+    // panelCommand.execute();
   }
 
   @Override
