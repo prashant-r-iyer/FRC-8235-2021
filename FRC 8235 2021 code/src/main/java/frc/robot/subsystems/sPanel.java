@@ -26,15 +26,19 @@ public class sPanel extends SubsystemBase {
   private final Color redTarget = ColorMatch.makeColor(0.321, 0.333, 0.154);
   private final Color yellowTarget = ColorMatch.makeColor(0.325, 0.594, 0.113);
 
+  public static I2C.Port i2cPort;
   public static ColorSensorV3 colorSensor;
   public static ColorMatch colorMatcher;
-  public static WPI_VictorSPX panelMotor; 
+  public static WPI_VictorSPX panelMotor;
+
+  public static Color detectedColor;
+  public static ColorMatchResult match;
 
   public sPanel() {
     // Setting up the color sensor.
-    I2C.Port i2cPort = I2C.Port.kOnboard;
-    ColorSensorV3 colorSensor = new ColorSensorV3(i2cPort);
-    ColorMatch colorMatcher = new ColorMatch();
+    i2cPort = I2C.Port.kOnboard;
+    colorSensor = new ColorSensorV3(i2cPort);
+    colorMatcher = new ColorMatch();
 
     // Setting up the motor.
     panelMotor = new WPI_VictorSPX(Constants.panelMotorPort);
@@ -48,45 +52,35 @@ public class sPanel extends SubsystemBase {
 
   // Defining a few methods that control the motor speed
   public void panelNormalSpeed() {
-    panelMotor.set(ControlMode.PercentOutput, Constants.panelSpeed);
+    panelMotor.set(Constants.panelSpeed);
   }
 
   public void panelSlowSpeed() {
-    panelMotor.set(ControlMode.PercentOutput, Constants.slowPanelSpeed);
-  }
-
-  // Checks for the color to be matched.
-  public String checkColor() {
-    Color detectedColor = colorSensor.getColor();
-    ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
-    if (match.color == blueTarget) {
-      return "B";
-    } else if (match.color == greenTarget) {
-      return "G";
-    } else if (match.color == redTarget) {
-      return "R";
-    } else if (match.color == yellowTarget) {
-      return "Y";
-    } else {
-      return null;
-    }
+    panelMotor.set(Constants.slowPanelSpeed);
   }
 
   // Detects current color and compares it to the color required.
-  public Boolean detectColor(String c) {
-    Color detectedColor = colorSensor.getColor();
-    ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
+  public Boolean detectColor(char targetColor) {
+    detectedColor = colorSensor.getColor();
+    match = colorMatcher.matchClosestColor(detectedColor);
 
     if (match.color == blueTarget) {
-      return c.equals("B");
-    } else if (match.color == greenTarget) {
-      return c.equals("G");
-    } else if (match.color == redTarget) {
-      return c.equals("R");
-    } else if (match.color == yellowTarget) {
-      return c.equals("Y");
-    } else return false;
+      return targetColor == 'B';
+    } 
+    else if (match.color == greenTarget) {
+      return targetColor == 'G';
+    } 
+    else if (match.color == redTarget) {
+      return targetColor == 'R';
+    } 
+    else if (match.color == yellowTarget) {
+      return targetColor == 'Y';
+    } 
+    else {
+      return false;
+    }
   }
+
 
   @Override
   public void periodic() {

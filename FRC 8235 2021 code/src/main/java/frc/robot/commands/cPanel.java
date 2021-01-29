@@ -31,7 +31,7 @@ public class cPanel extends CommandBase {
   public void execute() {
     // Main code. First checks the colour to be found. Then, the motor switches on and only turns off when said color is detected.
     if (RobotContainer.primaryController.getAButtonPressed()) {
-      String c = panelSubsystem.checkColor();
+      char c = panelSubsystem.checkColor();
       panelSubsystem.panelSlowSpeed();
       if (panelSubsystem.detectColor(c)) {
         panelSubsystem.panelNormalSpeed();
