@@ -37,7 +37,7 @@ public class sPanel extends SubsystemBase {
     ColorMatch colorMatcher = new ColorMatch();
 
     // Setting up the motor.
-    panelMotor = new WPI_VictorSPX(Constants.controlPanel);
+    panelMotor = new WPI_VictorSPX(Constants.panelMotorPort);
 
     // Adding the colors to be matched to the colorMatcher object.
     colorMatcher.addColorMatch(blueTarget);
@@ -46,29 +46,17 @@ public class sPanel extends SubsystemBase {
     colorMatcher.addColorMatch(yellowTarget);
   }
 
-  // Defining a few methods that control the motor speed.
-  public void zeroSpeed(){
-    panelMotor.set(ControlMode.PercentOutput, Constants.zeroSpeed);
+  // Defining a few methods that control the motor speed
+  public void panelNormalSpeed() {
+    panelMotor.set(ControlMode.PercentOutput, Constants.panelSpeed);
   }
 
-  public void quarterSpeed(){
-    panelMotor.set(ControlMode.PercentOutput, Constants.quarterSpeed);
-  }
-
-  public void halfSpeed(){
-    panelMotor.set(ControlMode.PercentOutput, Constants.halfSpeed);
-  }
-
-  public void threeQuarterSpeed(){
-    panelMotor.set(ControlMode.PercentOutput, Constants.threeQuarterSpeed);
-  }
-
-  public void fullSpeed(){
-    panelMotor.set(ControlMode.PercentOutput, Constants.fullSpeed);
+  public void panelSlowSpeed() {
+    panelMotor.set(ControlMode.PercentOutput, Constants.slowPanelSpeed);
   }
 
   // Checks for the color to be matched.
-  public String checkColor(){
+  public String checkColor() {
     Color detectedColor = colorSensor.getColor();
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
     if (match.color == blueTarget) {
@@ -85,7 +73,7 @@ public class sPanel extends SubsystemBase {
   }
 
   // Detects current color and compares it to the color required.
-  public Boolean detectColor(String c){
+  public Boolean detectColor(String c) {
     Color detectedColor = colorSensor.getColor();
     ColorMatchResult match = colorMatcher.matchClosestColor(detectedColor);
 
