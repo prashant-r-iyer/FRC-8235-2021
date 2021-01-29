@@ -81,6 +81,10 @@ public class sPanel extends SubsystemBase {
     }
   }
 
+  public void stop() {
+    panelMotor.set(0);
+  }
+
 
   @Override
   public void periodic() {
