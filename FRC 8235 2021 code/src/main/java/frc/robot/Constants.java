@@ -47,5 +47,5 @@ public final class Constants {
 
     public static int panelMotorPort = 0;
     public static double slowPanelSpeed = 0.5;
-    public static double panelSpeed = 1;
+    public static double normalPanelSpeed = 1;
 }
