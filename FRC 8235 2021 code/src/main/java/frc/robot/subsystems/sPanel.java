@@ -51,7 +51,7 @@ public class sPanel extends SubsystemBase {
 
   // Defining a few methods that control the motor speed
   public void panelNormalSpeed() {
-    panelMotor.set(Constants.panelSpeed);
+    panelMotor.set(Constants.normalPanelSpeed);
   }
 
   public void panelSlowSpeed() {
