@@ -8,8 +8,10 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Robot;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.sIntake;
+//Madhav spx
 
 
 public class cIntake extends CommandBase {
@@ -27,23 +29,45 @@ public class cIntake extends CommandBase {
   public void initialize() {
     
   }
+  //Madhav spx
 
   // Called every time the scheduler runs while the command is scheduled.
   //@Override
   public void execute() {
+    // if (RobotContainer.primaryController.getXButtonPressed()) {
+    //   intakeSubsystem.hatchOpen();
+    // }
+    // if (RobotContainer.primaryController.getBButtonPressed()) {
+    //   intakeSubsystem.hatchClosed();
+    // }
+    int count = 0;
     if (RobotContainer.primaryController.getXButtonPressed()) {
-      intakeSubsystem.hatchOpen();
+      count++;
+      if (count % 2 == 1) {
+        intakeSubsystem.forwardIntake();
+      }
+      else {
+        intakeSubsystem.stop();
+      }
     }
-    if (RobotContainer.primaryController.getBButtonPressed()) {
-      intakeSubsystem.hatchClosed();
+
+//Madhav spx
+    
+  while (RobotContainer.primaryController.getBButtonPressed()) {
+      intakeSubsystem.reverseIntake();
+    }
+    if (RobotContainer.primaryController.getBButtonReleased()) {
+      intakeSubsystem.stop();
     }
   }
-
+//Fat motor = new Madhavspx(fatport)
   // Called once the command ends or is interrupted.
   //@Override
   public void end(boolean interrupted) {
     intakeSubsystem.hatchClosed();
   }
+  
+  //Madhav spx
 
   // Returns true when the command should end.
   @Override
@@ -51,3 +75,4 @@ public class cIntake extends CommandBase {
     return false;
   }
 }
+//Madhav spx

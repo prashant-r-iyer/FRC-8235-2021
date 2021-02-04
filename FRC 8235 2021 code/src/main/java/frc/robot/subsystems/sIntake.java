@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
+//Madhav spx
+
 
 public class sIntake extends SubsystemBase {
 
@@ -23,6 +25,8 @@ public class sIntake extends SubsystemBase {
     intakePiston = new DoubleSolenoid(0,Constants.intakeForwardChannel, Constants.intakeReverseChannel);
     intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
   }
+  
+  //Madhav spx
 
   public void forwardIntake() {
     intakeMotor.set(Constants.intakeForwardSpeed);
@@ -39,6 +43,13 @@ public class sIntake extends SubsystemBase {
   public void hatchClosed() {
     intakePiston.set(kReverse);
   }
+
+  public void stop() {
+    intakeMotor.set(0);
+    intakePiston.set(kOff);
+  }
+  
+  //Madhav spx
   
   @Override
   public void periodic() {
@@ -46,4 +57,4 @@ public class sIntake extends SubsystemBase {
   }
 }
 
-
+//Madhav spx
