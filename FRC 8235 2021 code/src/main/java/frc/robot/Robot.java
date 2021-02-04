@@ -107,11 +107,11 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    // driveCommand.execute();
+    driveCommand.execute();
     // hatchCommand.execute();
     // intakeCommand.execute();
     // liftCommand.execute();
-    panelCommand.execute();
+    // panelCommand.execute();
   }
 
   @Override
