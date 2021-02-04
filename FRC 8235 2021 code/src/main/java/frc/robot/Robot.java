@@ -26,11 +26,11 @@ import frc.robot.commands.cPanel;
 public class Robot extends TimedRobot {
 
   private Command m_autonomousCommand;
-  public static cDrive driveCommand = new cDrive();
-  public static cHatch hatchCommand = new cHatch();
+  //public static cDrive driveCommand = new cDrive();
+  //public static cHatch hatchCommand = new cHatch();
   public static cIntake intakeCommand = new cIntake();
-  public static cLift liftCommand = new cLift();
-  public static cPanel panelCommand = new cPanel();
+  //public static cLift liftCommand = new cLift();
+  //public static cPanel panelCommand = new cPanel();
 
 
   /**
@@ -107,10 +107,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    // driveCommand.execute();
-    hatchCommand.execute();
+    //driveCommand.execute();
+    //hatchCommand.execute();
     intakeCommand.execute();
-    liftCommand.execute();
+    //liftCommand.execute();
     // panelCommand.execute();
   }
 
