@@ -25,10 +25,10 @@ public final class Constants {
     //public static double turnFactorMultiple = 0;
     //public static double straightSpeedMultiple = 0;
 
-    public static int leftFrontMotorPort = 4;
-    public static int rightFrontMotorPort = 1;
-    public static int leftBackMotorPort = 2;
-    public static int rightBackMotorPort = 3;
+    public static int leftFrontMotorPort = 8;
+    public static int rightFrontMotorPort = 5;
+    public static int leftBackMotorPort = 7;
+    public static int rightBackMotorPort = 6;
     public static double slowSpeed = 0.3;
     public static double testSpeed = 0.5;
     
