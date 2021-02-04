@@ -32,6 +32,11 @@ public class sLift extends SubsystemBase {
     liftMotor2.set(Constants.liftUpSpeed);
   }
 
+  public void stop() {
+    liftMotor1.set(0);
+    liftMotor2.set(0);
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

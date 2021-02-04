@@ -33,12 +33,11 @@ public class cLift extends CommandBase {
   public void execute() {
 
     while (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
-    liftSubsystem.liftDown();
+      liftSubsystem.liftDown();
     }
     while (RobotContainer.primaryController.getBumperPressed(Hand.kRight)){
       liftSubsystem.liftUp();
     }
-
   }
 
   // Called once the command ends or is interrupted.
