@@ -23,13 +23,13 @@ public class sLift extends SubsystemBase {
   }
 
   public void liftUp() {
-    liftMotor1.set(Constants.liftUpSpeed);
-    liftMotor2.set(-Constants.liftUpSpeed);
+    liftMotor1.set(-Constants.liftUpSpeed);
+    liftMotor2.set(Constants.liftUpSpeed);
   }
 
   public void liftDown() {
-    liftMotor1.set(-Constants.liftUpSpeed);
-    liftMotor2.set(Constants.liftUpSpeed);
+    liftMotor1.set(Constants.liftUpSpeed);
+    liftMotor2.set(-Constants.liftUpSpeed);
   }
 
   public void stop() {
