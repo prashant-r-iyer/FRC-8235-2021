@@ -21,15 +21,15 @@ public class sIntake extends SubsystemBase {
   
   public sIntake() {
     intakePiston = new DoubleSolenoid(0,Constants.intakeForwardChannel, Constants.intakeReverseChannel);
-    //intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
+    intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
   }
 
   public void forwardIntake() {
-    //intakeMotor.set(Constants.intakeForwardSpeed);
+    intakeMotor.set(Constants.intakeForwardSpeed);
   }
 
   public void reverseIntake() {
-    //intakeMotor.set(Constants.intakeBackwardSpeed);
+    intakeMotor.set(Constants.intakeBackwardSpeed);
   }
 
   public void hatchOpen() {
