@@ -53,7 +53,7 @@ public class cIntake extends CommandBase {
 
 //Madhav spx
     
-  while (RobotContainer.primaryController.getBButtonPressed()) {
+    while (RobotContainer.primaryController.getBButtonPressed()) {
       intakeSubsystem.reverseIntake();
     }
     if (RobotContainer.primaryController.getBButtonReleased()) {
