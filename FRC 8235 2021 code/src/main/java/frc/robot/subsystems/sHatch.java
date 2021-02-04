@@ -37,6 +37,10 @@ public class sHatch extends SubsystemBase {
     hatchPiston.set(kReverse);
   }
 
+  public void stop() {
+    hatchPiston.set(kOff);
+  }
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
