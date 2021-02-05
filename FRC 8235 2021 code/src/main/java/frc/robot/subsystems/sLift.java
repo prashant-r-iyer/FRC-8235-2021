@@ -27,6 +27,7 @@ public class sLift extends SubsystemBase {
     liftMotor2.set(Constants.liftUpSpeed);
   }
 
+
   public void liftDown() {
     liftMotor1.set(-Constants.liftUpSpeed);
     liftMotor2.set(-Constants.liftUpSpeed);
