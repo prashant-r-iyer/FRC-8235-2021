@@ -13,7 +13,6 @@ import frc.robot.commands.cDepositor;
 import frc.robot.commands.cDrive;
 import frc.robot.commands.cHatch;
 import frc.robot.commands.cIntake;
-import frc.robot.commands.cDepositor;
 import frc.robot.commands.cLift;
 import frc.robot.commands.cPanel;
 
@@ -114,6 +113,7 @@ public class Robot extends TimedRobot {
     intakeCommand.execute();
     depositorCommand.execute();
     liftCommand.execute();
+    depositorCommand.execute();
     //panelCommand.execute();
   }
 
