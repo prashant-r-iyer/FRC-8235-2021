@@ -41,6 +41,10 @@ public final class Constants {
     public static int intakeForwardChannel = 6;
     public static int intakeReverseChannel = 7;
 
+    public static int depositorMotorPort1 = 5;
+    public static int depositorMotorPort2 = 3;
+    public static double depositorMotorSpeed = 1;
+
     public static int liftMotorPort1 = 2;
     public static int liftMotorPort2 = 3;
     public static double liftUpSpeed = 0.05;
