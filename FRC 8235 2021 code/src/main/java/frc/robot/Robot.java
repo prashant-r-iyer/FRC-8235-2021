@@ -9,9 +9,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.cDepositor;
 import frc.robot.commands.cDrive;
 import frc.robot.commands.cHatch;
 import frc.robot.commands.cIntake;
+import frc.robot.commands.cDepositor;
 import frc.robot.commands.cLift;
 import frc.robot.commands.cPanel;
 
@@ -28,6 +30,7 @@ public class Robot extends TimedRobot {
   public static cDrive driveCommand = new cDrive();
   public static cHatch hatchCommand = new cHatch();
   public static cIntake intakeCommand = new cIntake();
+  public static cDepositor depositorCommand = new cDepositor();
   public static cLift liftCommand = new cLift();
   public static cPanel panelCommand = new cPanel();
 
@@ -109,6 +112,7 @@ public class Robot extends TimedRobot {
     driveCommand.execute();
     hatchCommand.execute();
     intakeCommand.execute();
+    depositorCommand.execute();
     liftCommand.execute();
     //panelCommand.execute();
   }
