@@ -112,7 +112,7 @@ public class Robot extends TimedRobot {
     depositorCommand.execute();
     liftCommand.execute();
     depositorCommand.execute();
-    panelCommand.execute();
+    //panelCommand.execute();
   }
 
   @Override

@@ -66,6 +66,7 @@ public class cPanel extends CommandBase {
         panelSubsystem.stop();
       }
     }
+    
 
     panelSubsystem.stop();
   }

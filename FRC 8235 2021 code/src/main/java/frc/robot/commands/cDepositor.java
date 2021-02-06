@@ -16,11 +16,13 @@ import frc.robot.subsystems.sDepositor;
 public class cDepositor extends CommandBase {
 
   public static sDepositor depositorSubsystem;
+  int count;
   
   public cDepositor() {
 
     depositorSubsystem = new sDepositor();
     addRequirements(depositorSubsystem);
+    count = 0;
 
   }
 
@@ -32,14 +34,31 @@ public class cDepositor extends CommandBase {
 
   @Override
   public void execute() {
-
-    while (RobotContainer.primaryController.getStickButtonPressed(Hand.kLeft)) {
-      depositorSubsystem.deposit();
+    //int count = 0;
+    if (RobotContainer.primaryController.getStickButtonPressed(Hand.kLeft)) {
+      count++;
+      if (count % 2 == 1) {
+        depositorSubsystem.depositForward();
+      }
+      else {
+        depositorSubsystem.stop();
+      }
     }
-    
-    while (RobotContainer.primaryController.getStickButtonReleased(Hand.kLeft)) {
+    while (RobotContainer.primaryController.getStickButtonPressed(Hand.kRight)) {
+      depositorSubsystem.depositReverse();
+    }
+    while (RobotContainer.primaryController.getStickButtonReleased(Hand.kRight)) {
       depositorSubsystem.stop();
     }
+    //count++;
+
+    
+    // if (RobotContainer.primaryController.getStickButtonReleased(Hand.kLeft)) {
+    //   depositorSubsystem.stop();
+    // }
+    // if (RobotContainer.primaryController.getStickButtonReleased(Hand.kRight)) {
+    //   depositorSubsystem.stop();
+    // }
   }
 
   // Called once the command ends or is interrupted.
