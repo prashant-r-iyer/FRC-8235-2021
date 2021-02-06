@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.cDepositor;
 import frc.robot.commands.cDrive;
-import frc.robot.commands.cHatch;
 import frc.robot.commands.cIntake;
 import frc.robot.commands.cLift;
 import frc.robot.commands.cPanel;
@@ -27,7 +26,6 @@ public class Robot extends TimedRobot {
 
   //private Command m_autonomousCommand;
   public static cDrive driveCommand = new cDrive();
-  public static cHatch hatchCommand = new cHatch();
   public static cIntake intakeCommand = new cIntake();
   public static cDepositor depositorCommand = new cDepositor();
   public static cLift liftCommand = new cLift();
@@ -108,13 +106,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    intakeCommand.initialize();
     driveCommand.execute();
-    hatchCommand.execute();
     intakeCommand.execute();
     depositorCommand.execute();
     liftCommand.execute();
     depositorCommand.execute();
-    //panelCommand.execute();
+    panelCommand.execute();
   }
 
   @Override

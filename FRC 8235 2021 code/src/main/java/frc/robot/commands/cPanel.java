@@ -39,24 +39,28 @@ public class cPanel extends CommandBase {
     // }
 
     if (RobotContainer.primaryController.getAButtonPressed()) {
+      panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
       if (panelSubsystem.detectColor('G')) {
         panelSubsystem.stop();
       }
     }
     if (RobotContainer.primaryController.getBButtonPressed()) {
+      panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
       if (panelSubsystem.detectColor('R')) {
         panelSubsystem.stop();
       }
     }
     if (RobotContainer.primaryController.getXButtonPressed()) {
+      panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
       if (panelSubsystem.detectColor('B')) {
         panelSubsystem.stop();
       }
     }
     if (RobotContainer.primaryController.getYButtonPressed()) {
+      panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
       if (panelSubsystem.detectColor('Y')) {
         panelSubsystem.stop();

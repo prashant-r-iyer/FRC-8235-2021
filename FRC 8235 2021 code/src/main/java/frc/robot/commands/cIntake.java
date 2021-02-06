@@ -26,19 +26,19 @@ public class cIntake extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    
+    intakeSubsystem.intakeHatchUp();
   }
   //Madhav spx
 
   // Called every time the scheduler runs while the command is scheduled.
   //@Override
   public void execute() {
-    if (RobotContainer.primaryController.getStartButtonPressed()) {
-      intakeSubsystem.hatchOpen();
-    }
-    if (RobotContainer.primaryController.getBackButtonPressed()) {
-      intakeSubsystem.hatchClosed();
-    }
+    // if (RobotContainer.primaryController.getStartButtonPressed()) {
+    //   intakeSubsystem.hatchOpen();
+    // }
+    // if (RobotContainer.primaryController.getBackButtonPressed()) {
+    //   intakeSubsystem.hatchClosed();
+    // }
     int count = 0;
     if (RobotContainer.primaryController.getXButtonPressed()) {
       count++;
@@ -63,7 +63,7 @@ public class cIntake extends CommandBase {
   // Called once the command ends or is interrupted.
   //@Override
   public void end(boolean interrupted) {
-    intakeSubsystem.hatchClosed();
+    
   }
   
   //Madhav spx

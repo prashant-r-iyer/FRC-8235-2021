@@ -36,11 +36,11 @@ public class sIntake extends SubsystemBase {
     intakeMotor.set(Constants.intakeBackwardSpeed);
   }
 
-  public void hatchOpen() {
+  public void intakeHatchUp() {
     intakePiston.set(kForward);
   }
 
-  public void hatchClosed() {
+  public void intakeHatchDown() {
     intakePiston.set(kReverse);
   }
 

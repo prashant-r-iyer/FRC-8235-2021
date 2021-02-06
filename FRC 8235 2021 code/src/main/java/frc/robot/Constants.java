@@ -20,10 +20,10 @@ public final class Constants {
     public static int primaryControllerPort = 0;
     public static int secondaryControllerPort = 1;
 
-    //public static double turnFactorMultiple = 0.7;
-    //public static double straightSpeedMultiple = 0.8;
-    public static double turnFactorMultiple = 0;
-    public static double straightSpeedMultiple = 0;
+    public static double turnFactorMultiple = 0.7;
+    public static double straightSpeedMultiple = 0.8;
+    //public static double turnFactorMultiple = 0;
+    //public static double straightSpeedMultiple = 0;
 
     public static int leftFrontMotorPort = 8;
     public static int rightFrontMotorPort = 5;
@@ -31,18 +31,15 @@ public final class Constants {
     public static int rightBackMotorPort = 6;
     public static double slowSpeed = 0.3;
     public static double testSpeed = 0.5;
-    
-    public static int hatchForwardChannel = 4;
-    public static int hatchReverseChannel = 5;
 
     public static int intakeMotorPort = 1;
-    public static double intakeForwardSpeed = 1;
+    public static double intakeForwardSpeed = 0.5;
     public static double intakeBackwardSpeed = -1;
     public static int intakeForwardChannel = 6;
     public static int intakeReverseChannel = 7;
 
-    public static int depositorMotorPort1 = 5;
-    public static int depositorMotorPort2 = 3;
+    public static int depositorMotorPort1 = 4;
+    public static int depositorMotorPort2 = 2;
     public static double depositorMotorSpeed = 1;
 
     public static int liftMotorPort1 = 2;
@@ -52,4 +49,6 @@ public final class Constants {
     public static int panelMotorPort = 0;
     public static double slowPanelSpeed = 0.5;
     public static double normalPanelSpeed = 1;
+    public static int panelForwardChannel = 4;
+    public static int panelReverseChannel = 5;
 }

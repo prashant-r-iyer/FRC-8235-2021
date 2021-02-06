@@ -9,7 +9,10 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.I2C;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.util.Color;
 import com.revrobotics.ColorMatch;
 import com.revrobotics.ColorMatchResult;
@@ -29,6 +32,7 @@ public class sPanel extends SubsystemBase {
   public static ColorSensorV3 colorSensor;
   public static ColorMatch colorMatcher;
   public static WPI_VictorSPX panelMotor;
+  public static DoubleSolenoid panelPiston;
 
   public static Color detectedColor;
   public static ColorMatchResult match;
@@ -41,6 +45,7 @@ public class sPanel extends SubsystemBase {
 
     // Setting up the motor.
     panelMotor = new WPI_VictorSPX(Constants.panelMotorPort);
+    panelPiston = new DoubleSolenoid(0, Constants.panelForwardChannel, Constants.panelReverseChannel);
 
     // Adding the colors to be matched to the colorMatcher object.
     colorMatcher.addColorMatch(blueTarget);
@@ -56,6 +61,14 @@ public class sPanel extends SubsystemBase {
 
   public void panelSlowSpeed() {
     panelMotor.set(Constants.slowPanelSpeed);
+  }
+
+  public void panelHatchUp() {
+    panelPiston.set(Value.kForward);
+  }
+
+  public void panelHatchDown() {
+    panelPiston.set(Value.kReverse);
   }
 
   // Detects current color and compares it to the color required.
