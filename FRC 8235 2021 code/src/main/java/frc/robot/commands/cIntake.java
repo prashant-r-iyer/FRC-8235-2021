@@ -61,7 +61,7 @@ public class cIntake extends CommandBase {
         intakeSubsystem.intakeHatchUp();
       }
       else {
-        //intakeSubsystem.stopHatch();
+        intakeSubsystem.intakeHatchDown();
       }
     }
     
