@@ -16,19 +16,20 @@ import frc.robot.subsystems.sIntake;
 public class cIntake extends CommandBase {
   
   public static sIntake intakeSubsystem;
-  int count;
+  int count1;
+  int count2;
   
   public cIntake() {
     intakeSubsystem = new sIntake();
     addRequirements(intakeSubsystem);
-    count = 0;
+    count1 = 0;
+    count2 = 0;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intakeSubsystem.intakeHatchUp();
   }
   //Madhav spx
 
@@ -41,26 +42,38 @@ public class cIntake extends CommandBase {
     // if (RobotContainer.primaryController.getBackButtonPressed()) {
     //   intakeSubsystem.hatchClosed();
     // }
+    
     if (RobotContainer.primaryController.getStartButtonPressed()) {
-      count++;
-      if (count % 2 == 1) {
+      count1++;
+      if (count1 % 2 == 1) {
         intakeSubsystem.forwardIntake();
       }
       else {
-        intakeSubsystem.stop();
+        intakeSubsystem.stopMotor();
       }
     }
 
 //Madhav spx
-    
-    while (RobotContainer.primaryController.getBackButtonPressed()) {
-      intakeSubsystem.reverseIntake();
+
+    if (RobotContainer.primaryController.getBackButtonPressed()) {
+      count2++;
+      if (count1 % 2 == 1) {
+        intakeSubsystem.intakeHatchUp();
+      }
+      else {
+        //intakeSubsystem.stopHatch();
+      }
     }
-    while (RobotContainer.primaryController.getBackButtonReleased()) {
-      intakeSubsystem.stop();
+    
+    // while (RobotContainer.primaryController.getBackButtonPressed()) {
+    //   //intakeSubsystem.reverseIntake();
+    //   intakeSubsystem.intakeHatchUp();
+    // }
+    // while (RobotContainer.primaryController.getBackButtonReleased()) {
+    //   intakeSubsystem.stop();
     }
     //count++;
-  }
+  
 //Fat motor = new Madhavspx(fatport);
   // Called once the command ends or is interrupted.
   //@Override

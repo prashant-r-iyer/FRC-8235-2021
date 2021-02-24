@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.cDepositor;
 import frc.robot.commands.cDrive;
@@ -30,6 +31,9 @@ public class Robot extends TimedRobot {
   public static cDepositor depositorCommand = new cDepositor();
   public static cLift liftCommand = new cLift();
   public static cPanel panelCommand = new cPanel();
+
+  public double startTime;
+  public double currentTime;
 
 
   /**
@@ -80,6 +84,7 @@ public class Robot extends TimedRobot {
     // schedule the autonomous command (example)
     //if (m_autonomousCommand != null) {
       //m_autonomousCommand.schedule();
+      startTime = Timer.getFPGATimestamp();
     }
   //}
 
@@ -88,6 +93,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
+    currentTime = Timer.getFPGATimestamp();
+    if (currentTime - startTime < 5) {
+      cDrive.driveSubsystem.slowFront();
+    }
+    else if (currentTime - startTime >= 5) {
+      cDrive.driveSubsystem.stop();
+    }
   }
 
   @Override
@@ -106,13 +118,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-    intakeCommand.initialize();
+    //intakeCommand.initialize();
     driveCommand.execute();
     intakeCommand.execute();
     depositorCommand.execute();
     liftCommand.execute();
     depositorCommand.execute();
-    //panelCommand.execute();
+    panelCommand.execute();
   }
 
   @Override

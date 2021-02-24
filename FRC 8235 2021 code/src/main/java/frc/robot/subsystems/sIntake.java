@@ -8,7 +8,7 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-import static edu.wpi.first.wpilibj.DoubleSolenoid.Value.*;
+import static edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -18,35 +18,44 @@ import frc.robot.Constants;
 
 public class sIntake extends SubsystemBase {
 
-  public static WPI_VictorSPX intakeMotor;
+  public static WPI_VictorSPX intakeMotor1;
+  public static WPI_VictorSPX intakeMotor2;
   public static DoubleSolenoid intakePiston;
   
   public sIntake() {
     intakePiston = new DoubleSolenoid(0,Constants.intakeForwardChannel, Constants.intakeReverseChannel);
-    intakeMotor = new WPI_VictorSPX(Constants.intakeMotorPort);
+    intakeMotor1 = new WPI_VictorSPX(Constants.intakeMotorPort2);
+    intakeMotor2 = new WPI_VictorSPX(Constants.intakeMotorPort2);
   }
   
   //Madhav spx
 
   public void forwardIntake() {
-    intakeMotor.set(Constants.intakeForwardSpeed);
+    intakeMotor1.set(Constants.intakeForwardSpeed);
+    intakeMotor2.set(Constants.intakeForwardSpeed);
   }
 
   public void reverseIntake() {
-    intakeMotor.set(Constants.intakeBackwardSpeed);
+    intakeMotor1.set(Constants.intakeBackwardSpeed);
+    intakeMotor2.set(Constants.intakeForwardSpeed);
   }
 
   public void intakeHatchUp() {
-    intakePiston.set(kForward);
+    intakePiston.set(Value.kForward);
   }
 
   public void intakeHatchDown() {
-    intakePiston.set(kReverse);
+    intakePiston.set(Value.kReverse);
   }
 
-  public void stop() {
-    intakeMotor.set(0);
-    intakePiston.set(kOff);
+  public void stopMotor() {
+    intakeMotor1.set(0);
+    intakeMotor2.set(0);
+    //intakePiston.set(Value.kOff);
+  }
+
+  public void stopHatch() {
+    intakePiston.set(Value.kOff);
   }
   
   //Madhav spx

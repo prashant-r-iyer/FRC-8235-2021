@@ -25,15 +25,16 @@ public class sDepositor extends SubsystemBase {
 
   public void depositForward() {
 
-    depositorMotor1.set(Constants.depositorForwardSpeed);
-    depositorMotor2.set(-Constants.depositorForwardSpeed);
+    depositorMotor1.set(-Constants.depositorForwardSpeed);
+    depositorMotor2.set(Constants.depositorForwardSpeed);
 
   }
 
   public void depositReverse() {
-    depositorMotor1.set(-Constants.depositorReverseSpeed);
-    depositorMotor2.set(Constants.depositorReverseSpeed);
+    depositorMotor1.set(Constants.depositorReverseSpeed);
+    depositorMotor2.set(-Constants.depositorReverseSpeed);
   }
+
 
   public void stop() {
 
