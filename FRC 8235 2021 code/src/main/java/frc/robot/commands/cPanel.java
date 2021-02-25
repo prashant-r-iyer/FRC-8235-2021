@@ -11,21 +11,23 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.sPanel;
 
-
+//Madhav SPX
+//Madhav SPX
+//Madhav SPX
 public class cPanel extends CommandBase {
-  
+  //Madhav SPX
   public static sPanel panelSubsystem;
-
+//Madhav SPX
   public cPanel() {
     panelSubsystem = new sPanel();
     addRequirements(panelSubsystem);
   }
-
+//Madhav SPX
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
   }
-
+//Madhav SPX
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
@@ -37,35 +39,40 @@ public class cPanel extends CommandBase {
     //     panelSubsystem.panelNormalSpeed();
     //   }
     // }
-
+//Madhav SPX
     if (RobotContainer.primaryController.getAButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      // if (panelSubsystem.detectColor('G')) {
-      //   panelSubsystem.stop();
-      // }
-    }
+      if (panelSubsystem.detectColor('G')) {
+        panelSubsystem.panelHatchDown();
+     }
+    }//Madhav SPX
+    
+
     if (RobotContainer.primaryController.getBButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      // if (panelSubsystem.detectColor('R')) {
-      //   panelSubsystem.stop();
-      // }
+      if (panelSubsystem.detectColor('R')) {
+      panelSubsystem.panelHatchDown();
+       }
     }
+   
     if (RobotContainer.primaryController.getXButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      // if (panelSubsystem.detectColor('B')) {
-      //   panelSubsystem.stop();
-      // }
+      if (panelSubsystem.detectColor('B')) {
+      panelSubsystem.panelHatchDown();
+      }
     }
+
     if (RobotContainer.primaryController.getYButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      // if (panelSubsystem.detectColor('Y')) {
-      //   panelSubsystem.stop();
-      // }
+      if (panelSubsystem.detectColor('Y')) {
+      panelSubsystem.panelHatchDown();
+      }
     }
+  
     
 
     //panelSubsystem.stop();
