@@ -72,22 +72,27 @@ public class sPanel extends SubsystemBase {
     panelPiston.set(Value.kReverse);
   }
 
+  String colorString;
   // Detects current color and compares it to the color required.
-  public Boolean detectColor(char targetColor) {
+  public Boolean detectColor(String targetColor) {
     detectedColor = colorSensor.getColor();
     match = colorMatcher.matchClosestColor(detectedColor);
 
     if (match.color == blueTarget) {
-      return targetColor == 'B';
+      colorString = "B";
+      return targetColor == colorString;
     } 
     else if (match.color == greenTarget) {
-      return targetColor == 'G';
+      colorString = "G";
+      return targetColor == colorString;
     } 
     else if (match.color == redTarget) {
-      return targetColor == 'R';
+      colorString = "R";
+      return targetColor == colorString;
     } 
     else if (match.color == yellowTarget) {
-      return targetColor == 'Y';
+      colorString = "Y";
+      return targetColor == colorString;
     } 
     else {
       return false;
@@ -106,6 +111,7 @@ public class sPanel extends SubsystemBase {
     SmartDashboard.putNumber("Green", detectedColor.green);
     SmartDashboard.putNumber("Blue", detectedColor.blue);
     SmartDashboard.putNumber("Confidence", match.confidence);
+    SmartDashboard.putString("Detected color", colorString);
   
   }
     // This method will be called once per scheduler run
