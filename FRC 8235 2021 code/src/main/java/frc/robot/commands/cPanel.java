@@ -43,7 +43,7 @@ public class cPanel extends CommandBase {
     if (RobotContainer.primaryController.getAButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor('G')) {
+      if (panelSubsystem.detectColor("G")) {
         panelSubsystem.panelHatchDown();
      }
     }//Madhav SPX
@@ -52,7 +52,7 @@ public class cPanel extends CommandBase {
     if (RobotContainer.primaryController.getBButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor('R')) {
+      if (panelSubsystem.detectColor("R")) {
       panelSubsystem.panelHatchDown();
        }
     }
@@ -60,7 +60,7 @@ public class cPanel extends CommandBase {
     if (RobotContainer.primaryController.getXButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor('B')) {
+      if (panelSubsystem.detectColor("B")) {
       panelSubsystem.panelHatchDown();
       }
     }
@@ -68,7 +68,7 @@ public class cPanel extends CommandBase {
     if (RobotContainer.primaryController.getYButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor('Y')) {
+      if (panelSubsystem.detectColor("Y")) {
       panelSubsystem.panelHatchDown();
       }
     }
