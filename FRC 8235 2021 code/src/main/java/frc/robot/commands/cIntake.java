@@ -53,7 +53,6 @@ public class cIntake extends CommandBase {
       }
     }
 
-//Madhav spx
 
     if (RobotContainer.primaryController.getBackButtonPressed()) {
       count2++;
@@ -65,13 +64,13 @@ public class cIntake extends CommandBase {
       }
     }
     
-    // while (RobotContainer.primaryController.getBackButtonPressed()) {
-    //   //intakeSubsystem.reverseIntake();
-    //   intakeSubsystem.intakeHatchUp();
-    // }
-    // while (RobotContainer.primaryController.getBackButtonReleased()) {
-    //   intakeSubsystem.stop();
+    while (RobotContainer.secondaryController.getStartButtonPressed()) {
+      intakeSubsystem.reverseIntake();
     }
+    while (RobotContainer.primaryController.getBackButtonReleased()) {
+      intakeSubsystem.stopMotor();
+    }
+  }
     //count++;
   
 //Fat motor = new Madhavspx(fatport);
