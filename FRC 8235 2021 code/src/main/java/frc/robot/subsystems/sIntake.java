@@ -48,15 +48,13 @@ public class sIntake extends SubsystemBase {
     intakePiston.set(Value.kReverse);
   }
 
-  public void stopMotor() {
+  public void stop() {
     intakeMotor1.set(0);
     intakeMotor2.set(0);
+    intakePiston.set(Value.kOff);
     //intakePiston.set(Value.kOff);
   }
 
-  public void stopHatch() {
-    intakePiston.set(Value.kOff);
-  }
   
   //Madhav spx
   

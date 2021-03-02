@@ -94,11 +94,39 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     currentTime = Timer.getFPGATimestamp();
-    if (currentTime - startTime < 5) {
+    if (currentTime - startTime > 0) {
       cDrive.driveSubsystem.slowFront();
+      cIntake.intakeSubsystem.forwardIntake();
+      cIntake.intakeSubsystem.intakeHatchDown();
     }
-    else if (currentTime - startTime >= 5) {
+    if (currentTime - startTime > 10) {
       cDrive.driveSubsystem.stop();
+      //Turn right
+    }
+    if (currentTime - startTime > 20) {
+      cIntake.intakeSubsystem.stop();
+      //Turn around
+      //Color panel
+    }
+    if (currentTime - startTime > 40) {
+      cIntake.intakeSubsystem.stop();
+      //Turn around
+      cDrive.driveSubsystem.slowReverse();
+    }
+    if (currentTime - startTime > 50) {
+      cDrive.driveSubsystem.stop();
+      cDepositor.depositorSubsystem.depositForward();
+    }
+    if (currentTime - startTime > 55) {
+      cDepositor.depositorSubsystem.stop();
+      //Drive to pole
+    }
+    if (currentTime - startTime > 65) {
+      cDrive.driveSubsystem.stop();
+      cLift.liftSubsystem.liftUp();
+    }
+    if (currentTime - startTime > 90) {
+      cLift.liftSubsystem.stop();
     }
   }
 

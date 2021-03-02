@@ -40,7 +40,7 @@ public class cPanel extends CommandBase {
     //   }
     // }
 //Madhav SPX
-    if (RobotContainer.primaryController.getAButtonPressed()) {
+    while (RobotContainer.primaryController.getAButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelSlowSpeed();
       if (panelSubsystem.detectColor("G")) {
@@ -49,31 +49,36 @@ public class cPanel extends CommandBase {
     }//Madhav SPX
     
 
-    if (RobotContainer.primaryController.getBButtonPressed()) {
-      panelSubsystem.panelHatchUp();
-      panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor("R")) {
-      panelSubsystem.panelHatchDown();
-       }
-    }
+    // if (RobotContainer.primaryController.getBButtonPressed()) {
+    //   panelSubsystem.panelHatchUp();
+    //   panelSubsystem.panelSlowSpeed();
+    //   if (panelSubsystem.detectColor("R")) {
+    //   panelSubsystem.panelHatchDown();
+    //    }
+    // }
    
-    if (RobotContainer.primaryController.getXButtonPressed()) {
-      panelSubsystem.panelHatchUp();
-      panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor("B")) {
-      panelSubsystem.panelHatchDown();
-      }
-    }
+    // if (RobotContainer.primaryController.getXButtonPressed()) {
+    //   panelSubsystem.panelHatchUp();
+    //   panelSubsystem.panelSlowSpeed();
+    //   if (panelSubsystem.detectColor("B")) {
+    //   panelSubsystem.panelHatchDown();
+    //   }
+    // }
 
-    if (RobotContainer.primaryController.getYButtonPressed()) {
-      panelSubsystem.panelHatchUp();
-      panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor("Y")) {
-      panelSubsystem.panelHatchDown();
-      }
-    }
+    // if (RobotContainer.primaryController.getYButtonPressed()) {
+    //   panelSubsystem.panelHatchUp();
+    //   panelSubsystem.panelSlowSpeed();
+    //   if (panelSubsystem.detectColor("Y")) {
+    //   panelSubsystem.panelHatchDown();
+    //   }
+    // }
   
-    
+    while (RobotContainer.primaryController.getAButtonReleased()) {
+      panelSubsystem.panelHatchDown();
+    }
+    while (RobotContainer.primaryController.getBButtonPressed()) {
+      panelSubsystem.stop();
+    }
 
     //panelSubsystem.stop();
   }

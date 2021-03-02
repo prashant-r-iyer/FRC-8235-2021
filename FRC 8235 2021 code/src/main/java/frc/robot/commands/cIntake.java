@@ -43,32 +43,35 @@ public class cIntake extends CommandBase {
     //   intakeSubsystem.hatchClosed();
     // }
     
-    if (RobotContainer.primaryController.getStartButtonPressed()) {
-      count1++;
-      if (count1 % 2 == 1) {
-        intakeSubsystem.forwardIntake();
-      }
-      else {
-        intakeSubsystem.stopMotor();
-      }
-    }
+    // if (RobotContainer.primaryController.getStartButtonPressed()) {
+    //   count1++;
+    //   if (count1 % 2 == 1) {
+    //     intakeSubsystem.forwardIntake();
+    //   }
+    //   else {
+    //     intakeSubsystem.stopMotor();
+    //   }
+    // }
 
 
-    if (RobotContainer.primaryController.getBackButtonPressed()) {
-      count2++;
-      if (count1 % 2 == 1) {
-        intakeSubsystem.intakeHatchUp();
-      }
-      else {
-        intakeSubsystem.intakeHatchDown();
-      }
-    }
+    // if (RobotContainer.primaryController.getBackButtonPressed()) {
+    //   count2++;
+    //   if (count1 % 2 == 1) {
+    //     intakeSubsystem.intakeHatchUp();
+    //   }
+    //   else {
+    //     intakeSubsystem.intakeHatchDown();
+    //   }
+    // }
     
-    while (RobotContainer.secondaryController.getStartButtonPressed()) {
-      intakeSubsystem.reverseIntake();
+    while (RobotContainer.primaryController.getStartButtonPressed()) {
+      intakeSubsystem.intakeHatchUp();
     }
-    while (RobotContainer.primaryController.getBackButtonReleased()) {
-      intakeSubsystem.stopMotor();
+    // while (RobotContainer.primaryController.getBackButtonReleased()) {
+    //   intakeSubsystem.stopMotor();
+    // }
+    while (RobotContainer.primaryController.getBackButtonPressed()) {
+      intakeSubsystem.intakeHatchDown();
     }
   }
     //count++;
