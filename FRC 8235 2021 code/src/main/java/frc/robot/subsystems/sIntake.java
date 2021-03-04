@@ -24,20 +24,20 @@ public class sIntake extends SubsystemBase {
   
   public sIntake() {
     intakePiston = new DoubleSolenoid(0,Constants.intakeForwardChannel, Constants.intakeReverseChannel);
-    intakeMotor1 = new WPI_VictorSPX(Constants.intakeMotorPort2);
-    intakeMotor2 = new WPI_VictorSPX(Constants.intakeMotorPort2);
+    intakeMotor1 = new WPI_VictorSPX(Constants.intakeMotorPort1);
+    //intakeMotor2 = new WPI_VictorSPX(Constants.intakeMotorPort2);
   }
   
   //Madhav spx
 
   public void forwardIntake() {
-    intakeMotor1.set(Constants.intakeForwardSpeed);
-    intakeMotor2.set(Constants.intakeForwardSpeed);
+    intakeMotor1.set(Constants.intakeSpeed);
+    //intakeMotor2.set(Constants.intakeSpeed);
   }
 
   public void reverseIntake() {
-    intakeMotor1.set(Constants.intakeBackwardSpeed);
-    intakeMotor2.set(Constants.intakeForwardSpeed);
+    intakeMotor1.set(-Constants.intakeSpeed);
+    //intakeMotor2.set(-Constants.intakeSpeed);
   }
 
   public void intakeHatchUp() {
@@ -50,7 +50,7 @@ public class sIntake extends SubsystemBase {
 
   public void stop() {
     intakeMotor1.set(0);
-    intakeMotor2.set(0);
+    //intakeMotor2.set(0);
     intakePiston.set(Value.kOff);
     //intakePiston.set(Value.kOff);
   }

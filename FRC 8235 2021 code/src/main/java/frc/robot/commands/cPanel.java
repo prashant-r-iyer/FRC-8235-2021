@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Robot;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.sPanel;
 
@@ -40,13 +41,13 @@ public class cPanel extends CommandBase {
     //   }
     // }
 //Madhav SPX
-    while (RobotContainer.primaryController.getAButtonPressed()) {
-      panelSubsystem.panelHatchUp();
-      panelSubsystem.panelSlowSpeed();
-      if (panelSubsystem.detectColor("G")) {
-        panelSubsystem.panelHatchDown();
-     }
-    }//Madhav SPX
+    // while (RobotContainer.primaryController.getAButtonPressed()) {
+    //   panelSubsystem.panelHatchUp();
+    //   panelSubsystem.panelSlowSpeed();
+    //   if (panelSubsystem.detectColor("G")) {
+    //     panelSubsystem.panelHatchDown();
+    //  }
+    // }//Madhav SPX
     
 
     // if (RobotContainer.primaryController.getBButtonPressed()) {
@@ -73,12 +74,16 @@ public class cPanel extends CommandBase {
     //   }
     // }
   
-    while (RobotContainer.primaryController.getAButtonReleased()) {
+    while (RobotContainer.primaryController.getAButtonPressed()) {
       panelSubsystem.panelHatchDown();
+      panelSubsystem.panelNormalSpeed();
     }
     while (RobotContainer.primaryController.getBButtonPressed()) {
-      panelSubsystem.stop();
+      panelSubsystem.panelHatchUp();
     }
+    // while (RobotContainer.primaryController.getAButtonReleased() || RobotContainer.primaryController.getBButtonReleased()) {
+    //   panelSubsystem.stop();
+    // }
 
     //panelSubsystem.stop();
   }

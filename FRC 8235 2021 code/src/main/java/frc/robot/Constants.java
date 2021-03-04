@@ -29,13 +29,12 @@ public final class Constants {
     public static int rightFrontMotorPort = 5;
     public static int leftBackMotorPort = 7;
     public static int rightBackMotorPort = 6;
-    public static double slowSpeed = 0.3;
+    public static double slowSpeed = 0.5;
     public static double testSpeed = 0.1;
 
     public static int intakeMotorPort1 = 1;
     public static int intakeMotorPort2 = 3;
-    public static double intakeForwardSpeed = 0.3;
-    public static double intakeBackwardSpeed = -0.3;
+    public static double intakeSpeed = 0.5;
     public static int intakeForwardChannel = 5;
     public static int intakeReverseChannel = 4;
 
@@ -44,13 +43,13 @@ public final class Constants {
     public static double depositorForwardSpeed = 0.95;
     public static double depositorReverseSpeed = 0.3;
 
-    public static int liftMotorPort1 = 69;
-    public static int liftMotorPort2 = 68;
-    public static double liftUpSpeed = 0.05;
+    public static int liftMotorPort1 = 10;
+    public static int liftMotorPort2 = 11;
+    public static double liftUpSpeed = 0.9;
 
     public static int panelMotorPort = 9;
     public static double slowPanelSpeed = 0.5;
     public static double normalPanelSpeed = 1;
-    public static int panelForwardChannel = 6;
-    public static int panelReverseChannel = 7;
+    public static int panelForwardChannel = 7;
+    public static int panelReverseChannel = 6;
 }
