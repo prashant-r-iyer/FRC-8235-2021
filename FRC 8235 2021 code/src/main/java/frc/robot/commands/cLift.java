@@ -16,6 +16,8 @@ import frc.robot.subsystems.sLift;
 public class cLift extends CommandBase {
 
   public static sLift liftSubsystem;
+  int count1;
+  int count2;
   
   public cLift() {
     liftSubsystem = new sLift();
@@ -32,17 +34,23 @@ public class cLift extends CommandBase {
   @Override
   public void execute() {
 
-    while (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
-      liftSubsystem.liftDown();
+    if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
+      count1++;
+      if (count1 % 2 == 1) {
+        liftSubsystem.liftUp();
+      }
+      else {
+        liftSubsystem.stop();
+      }
     }
     while (RobotContainer.primaryController.getBumperPressed(Hand.kRight)){
-      liftSubsystem.liftUp();
-    }
-    while (RobotContainer.primaryController.getBumperReleased(Hand.kLeft)){
-      liftSubsystem.stop();
-    }
-    while (RobotContainer.primaryController.getBumperReleased(Hand.kRight)){
-      liftSubsystem.stop();
+      count2++;
+      if (count2 % 2 == 1) {
+        liftSubsystem.liftDown();
+      }
+      else {
+        liftSubsystem.stop();
+      }
     }
   }
 
