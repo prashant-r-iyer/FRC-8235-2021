@@ -50,6 +50,6 @@ public final class Constants {
     public static int panelMotorPort = 9;
     public static double slowPanelSpeed = 0.5;
     public static double normalPanelSpeed = 1;
-    public static int panelForwardChannel = 7;
-    public static int panelReverseChannel = 6;
+    public static int panelForwardChannel = 6;
+    public static int panelReverseChannel = 7;
 }

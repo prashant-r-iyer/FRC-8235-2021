@@ -72,11 +72,15 @@ public class cIntake extends CommandBase {
     //   intakeSubsystem.stopMotor();
     // }
     while (RobotContainer.primaryController.getBackButtonPressed()) {
-      intakeSubsystem.intakeHatchDown();
+
       intakeSubsystem.reverseIntake();
     }
     while (RobotContainer.primaryController.getStartButtonReleased() || RobotContainer.primaryController.getBackButtonReleased()) {
       intakeSubsystem.stop();
+
+    }
+    while (RobotContainer.primaryController.getXButtonPressed()) {
+      intakeSubsystem.intakeHatchUp();
     }
   }
     //count++;

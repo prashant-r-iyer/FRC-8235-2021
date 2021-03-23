@@ -128,20 +128,20 @@ public class Robot extends TimedRobot {
     // if (currentTime - startTime > 90) {
     //   cLift.liftSubsystem.stop();
     // }
-    if (currentTime - startTime < 10) {
+    if (currentTime - startTime > 0) {
       cPanel.panelSubsystem.panelNormalSpeed();
     }
-    else if (currentTime - startTime < 20) {
+    if (currentTime - startTime > 5) {
       cPanel.panelSubsystem.stop();
       cDrive.driveSubsystem.slowFront();
       cIntake.intakeSubsystem.forwardIntake();
     }
-    else if (currentTime - startTime < 25) {
+    if (currentTime - startTime > 12) {
       cDrive.driveSubsystem.stop();
       cIntake.intakeSubsystem.stop();
       cDepositor.depositorSubsystem.depositForward();
     }
-    else if (currentTime - startTime < 35) {
+    if (currentTime - startTime > 16) {
       cDepositor.depositorSubsystem.stop();
     }
   }

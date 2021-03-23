@@ -8,7 +8,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Robot;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.sPanel;
 
@@ -75,11 +74,14 @@ public class cPanel extends CommandBase {
     // }
   
     while (RobotContainer.primaryController.getAButtonPressed()) {
-      panelSubsystem.panelHatchDown();
+      panelSubsystem.panelHatchUp();
       panelSubsystem.panelNormalSpeed();
     }
     while (RobotContainer.primaryController.getBButtonPressed()) {
-      panelSubsystem.panelHatchUp();
+      panelSubsystem.panelHatchDown();
+    }
+    while (RobotContainer.primaryController.getAButtonReleased()) {
+      panelSubsystem.stop();
     }
     // while (RobotContainer.primaryController.getAButtonReleased() || RobotContainer.primaryController.getBButtonReleased()) {
     //   panelSubsystem.stop();

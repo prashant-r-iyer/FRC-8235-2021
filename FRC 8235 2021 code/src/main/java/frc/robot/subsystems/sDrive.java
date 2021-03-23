@@ -38,11 +38,6 @@ public class sDrive extends SubsystemBase {
     
     drive = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
     
-    /* leftFrontMotor.configFactoryDefault();
-    rightFrontMotor.configFactoryDefault();
-    leftBackMotor.configFactoryDefault();
-    rightBackMotor.configFactoryDefault(); */
-    
     leftFrontMotor.setInverted(false);
     rightFrontMotor.setInverted(false);
     leftBackMotor.setInverted(false);
