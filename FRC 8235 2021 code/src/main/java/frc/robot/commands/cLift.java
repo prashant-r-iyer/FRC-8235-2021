@@ -22,6 +22,8 @@ public class cLift extends CommandBase {
   public cLift() {
     liftSubsystem = new sLift();
     addRequirements(liftSubsystem);
+    count1 = 0;
+    count2 = 0;
   }
 
   // Called when the command is initially scheduled.
@@ -33,7 +35,6 @@ public class cLift extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-
     if (RobotContainer.primaryController.getBumperPressed(Hand.kLeft)){
       count1++;
       if (count1 % 2 == 1) {

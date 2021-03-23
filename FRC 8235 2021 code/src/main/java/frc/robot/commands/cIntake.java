@@ -16,14 +16,12 @@ import frc.robot.subsystems.sIntake;
 public class cIntake extends CommandBase {
   
   public static sIntake intakeSubsystem;
-  int count1;
-  int count2;
+  int count;
   
   public cIntake() {
     intakeSubsystem = new sIntake();
     addRequirements(intakeSubsystem);
-    count1 = 0;
-    count2 = 0;
+    count = 0;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -64,23 +62,30 @@ public class cIntake extends CommandBase {
     //   }
     // }
     
-    while (RobotContainer.primaryController.getStartButtonPressed()) {
-      intakeSubsystem.intakeHatchUp();
-      intakeSubsystem.forwardIntake();
+    if (RobotContainer.primaryController.getBackButtonPressed()) {
+      count++;
+      if (count % 2 == 1) {
+        intakeSubsystem.forwardIntake();
+      }
+      else {
+        intakeSubsystem.stop();
+      }
     }
     // while (RobotContainer.primaryController.getBackButtonReleased()) {
     //   intakeSubsystem.stopMotor();
     // }
-    while (RobotContainer.primaryController.getBackButtonPressed()) {
-
+    while (RobotContainer.primaryController.getStartButtonPressed()) {
       intakeSubsystem.reverseIntake();
     }
-    while (RobotContainer.primaryController.getStartButtonReleased() || RobotContainer.primaryController.getBackButtonReleased()) {
+    while (RobotContainer.primaryController.getStartButtonReleased()) {
       intakeSubsystem.stop();
+    }
 
+    while (RobotContainer.primaryController.getYButtonPressed()) {
+      intakeSubsystem.intakeHatchUp();
     }
     while (RobotContainer.primaryController.getXButtonPressed()) {
-      intakeSubsystem.intakeHatchUp();
+      intakeSubsystem.intakeHatchDown();
     }
   }
     //count++;

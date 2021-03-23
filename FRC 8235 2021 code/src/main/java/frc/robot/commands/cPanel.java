@@ -73,7 +73,7 @@ public class cPanel extends CommandBase {
     //   }
     // }
   
-    while (RobotContainer.primaryController.getAButtonPressed()) {
+    if (RobotContainer.primaryController.getAButtonPressed()) {
       panelSubsystem.panelHatchUp();
       panelSubsystem.panelNormalSpeed();
     }
