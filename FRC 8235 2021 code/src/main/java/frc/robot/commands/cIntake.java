@@ -29,7 +29,6 @@ public class cIntake extends CommandBase {
   @Override
   public void initialize() {
   }
-  //Madhav spx
 
   // Called every time the scheduler runs while the command is scheduled.
   //@Override
@@ -61,7 +60,8 @@ public class cIntake extends CommandBase {
     //     intakeSubsystem.intakeHatchDown();
     //   }
     // }
-    
+    intakeSubsystem.intakeHatchDown();
+
     if (RobotContainer.primaryController.getBackButtonPressed()) {
       count++;
       if (count % 2 == 1) {
@@ -87,17 +87,16 @@ public class cIntake extends CommandBase {
     while (RobotContainer.primaryController.getXButtonPressed()) {
       intakeSubsystem.intakeHatchDown();
     }
+
   }
     //count++;
-  
-//Fat motor = new Madhavspx(fatport);
+
   // Called once the command ends or is interrupted.
   //@Override
   public void end(boolean interrupted) {
     
   }
   
-  //Madhav spx
 
   // Returns true when the command should end.
   @Override
@@ -105,4 +104,3 @@ public class cIntake extends CommandBase {
     return false;
   }
 }
-//Madhav spx

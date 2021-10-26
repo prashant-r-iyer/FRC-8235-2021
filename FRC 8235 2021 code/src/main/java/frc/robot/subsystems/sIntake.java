@@ -13,8 +13,6 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
-//Madhav spx
-
 
 public class sIntake extends SubsystemBase {
 
@@ -28,7 +26,6 @@ public class sIntake extends SubsystemBase {
     //intakeMotor2 = new WPI_VictorSPX(Constants.intakeMotorPort2);
   }
   
-  //Madhav spx
 
   public void forwardIntake() {
     intakeMotor1.set(Constants.intakeSpeed);
@@ -56,12 +53,8 @@ public class sIntake extends SubsystemBase {
   }
 
   
-  //Madhav spx
-  
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
 }
-
-//Madhav spx

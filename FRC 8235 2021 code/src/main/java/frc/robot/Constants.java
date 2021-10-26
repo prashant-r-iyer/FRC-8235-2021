@@ -45,7 +45,7 @@ public final class Constants {
 
     public static int liftMotorPort1 = 10;
     public static int liftMotorPort2 = 11;
-    public static double liftUpSpeed = 0.9;
+    public static double liftUpSpeed = 0.3;
 
     public static int panelMotorPort = 9;
     public static double slowPanelSpeed = 0.5;

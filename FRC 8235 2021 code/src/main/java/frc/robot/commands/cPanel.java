@@ -15,19 +15,17 @@ import frc.robot.subsystems.sPanel;
 //Madhav SPX
 //Madhav SPX
 public class cPanel extends CommandBase {
-  //Madhav SPX
+
   public static sPanel panelSubsystem;
-//Madhav SPX
+  
   public cPanel() {
     panelSubsystem = new sPanel();
     addRequirements(panelSubsystem);
   }
-//Madhav SPX
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
   }
-//Madhav SPX
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
@@ -39,14 +37,13 @@ public class cPanel extends CommandBase {
     //     panelSubsystem.panelNormalSpeed();
     //   }
     // }
-//Madhav SPX
     // while (RobotContainer.primaryController.getAButtonPressed()) {
     //   panelSubsystem.panelHatchUp();
     //   panelSubsystem.panelSlowSpeed();
     //   if (panelSubsystem.detectColor("G")) {
     //     panelSubsystem.panelHatchDown();
     //  }
-    // }//Madhav SPX
+    // }
     
 
     // if (RobotContainer.primaryController.getBButtonPressed()) {
